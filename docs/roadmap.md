@@ -9,7 +9,7 @@ and code-level fluency. Timing is directional rather than a release promise.
 - isolated learner workspaces
 - test, demo, hint, and report commands
 - complete Bigram Language Model lesson
-- placeholder Variational Autoencoder lesson
+- complete Variational Autoencoder lesson
 
 ## Week 3–4
 
@@ -21,7 +21,6 @@ and code-level fluency. Timing is directional rather than a release promise.
 
 ### World models
 
-- complete Variational Autoencoder lesson
 - latent dynamics fundamentals
 - MDN-RNN implementation
 

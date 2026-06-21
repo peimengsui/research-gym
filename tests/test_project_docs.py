@@ -22,7 +22,9 @@ def test_readme_contains_complete_workspace_workflow() -> None:
         "uv sync --locked",
         "uv run rgym list",
         "uv run rgym inspect llm.01_bigram_lm",
+        "uv run rgym inspect wm.01_vae",
         "uv run rgym start llm.01_bigram_lm",
+        "uv run rgym start wm.01_vae",
         "uv run rgym test",
         "uv run rgym run",
         "uv run rgym hint",
@@ -40,3 +42,25 @@ def test_repository_contains_no_notebooks() -> None:
     ]
 
     assert notebooks == []
+
+
+def test_mvp_lessons_have_complete_structure() -> None:
+    lesson_paths = [
+        PROJECT_ROOT / "tracks" / "llm" / "01_bigram_lm",
+        PROJECT_ROOT / "tracks" / "world_models" / "01_vae",
+    ]
+    required_paths = [
+        "lesson.yaml",
+        "README.md",
+        "concept.md",
+        "guide.md",
+        "scaffold.py",
+        "solution.py",
+        "hints.md",
+        "review.md",
+        "scripts/run_demo.py",
+    ]
+
+    for lesson_path in lesson_paths:
+        assert all((lesson_path / path).is_file() for path in required_paths)
+        assert any((lesson_path / "tests").glob("test_*.py"))

@@ -4,6 +4,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+import pytest
+
 from rgym.registry import get_lesson
 from rgym.workspace import create_workspace
 
@@ -11,8 +13,9 @@ from rgym.workspace import create_workspace
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 
-def test_bigram_solution_passes_lesson_tests(tmp_path: Path) -> None:
-    lesson = get_lesson(PROJECT_ROOT, "llm.01_bigram_lm")
+@pytest.mark.parametrize("lesson_id", ["llm.01_bigram_lm", "wm.01_vae"])
+def test_solution_passes_lesson_tests(tmp_path: Path, lesson_id: str) -> None:
+    lesson = get_lesson(PROJECT_ROOT, lesson_id)
     workspace = create_workspace(lesson, tmp_path)
     shutil.copy2(lesson.path / "solution.py", workspace / lesson.entrypoint)
 

@@ -50,7 +50,7 @@ Current lesson status:
 | Lesson | Status |
 | --- | --- |
 | `llm.01_bigram_lm` | Complete |
-| `wm.01_vae` | Placeholder; planned for Phase 5 |
+| `wm.01_vae` | Complete |
 
 ## Start the Bigram Language Model lesson
 
@@ -88,6 +88,30 @@ To erase a workspace and restart:
 cd ../..
 uv run rgym start llm.01_bigram_lm --force
 ```
+
+## Start the Variational Autoencoder lesson
+
+```bash
+uv run rgym start wm.01_vae
+cd workspace/wm.01_vae
+uv run rgym test
+```
+
+Read `concept.md` and `guide.md`, then implement the encoder, latent
+distribution, reparameterization trick, decoder, and VAE loss in
+`implementation.py`.
+
+Use the same test, demo, hint, and report workflow:
+
+```bash
+uv run rgym test
+uv run rgym run
+uv run rgym hint
+uv run rgym report
+```
+
+Compare your completed work with
+`tracks/world_models/01_vae/solution.py` from the repository root.
 
 ## Development
 
