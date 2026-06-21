@@ -3,22 +3,41 @@
 ResearchGym is a CLI-first learning environment for re-implementing
 foundational language-model and world-model ideas from scratch.
 
-The project uses ordinary Python files, short guides, focused tests, and tiny
-demos instead of notebooks. This keeps every implementation visible, easy to
-review, and reproducible from the command line.
+It is a guided implementation gym, not a model library. Lessons use ordinary
+Python files, focused tests, tiny CPU-friendly demos, and readable reference
+implementations. There are no notebooks hiding state or execution order.
 
-## Setup
+## Learning loop
 
-ResearchGym requires Python 3.11 or newer and uses
-[uv](https://docs.astral.sh/uv/) for dependency management:
+Every lesson follows the same loop:
+
+```text
+read the concept
+→ inspect the scaffold
+→ implement the TODOs
+→ run focused tests
+→ run a tiny demo
+→ request hints when needed
+→ reflect on the implementation
+→ compare with the reference
+→ generate a report
+```
+
+## Requirements
+
+- Python 3.11 or newer
+- [uv](https://docs.astral.sh/uv/)
+- CPU is sufficient
+
+Install the locked project environment:
 
 ```bash
-uv sync
+git clone https://github.com/peimengsui/research-gym.git
+cd research-gym
+uv sync --locked
 ```
 
 ## Discover lessons
-
-The Phase 0–1 CLI can list and inspect the two planned MVP lessons:
 
 ```bash
 uv run rgym list
@@ -26,22 +45,76 @@ uv run rgym inspect llm.01_bigram_lm
 uv run rgym inspect wm.01_vae
 ```
 
-Run the test suite with:
+Current lesson status:
 
-```bash
-uv run pytest
-```
+| Lesson | Status |
+| --- | --- |
+| `llm.01_bigram_lm` | Complete |
+| `wm.01_vae` | Placeholder; planned for Phase 5 |
 
-## Lesson workspace workflow
+## Start the Bigram Language Model lesson
+
+Create a disposable learner workspace:
 
 ```bash
 uv run rgym start llm.01_bigram_lm
 cd workspace/llm.01_bigram_lm
+```
+
+Read `concept.md` and `guide.md`, then edit `implementation.py`. The first test
+run is expected to fail because the scaffold contains TODOs:
+
+```bash
+uv run rgym test
+```
+
+Use the complete workspace workflow while learning:
+
+```bash
 uv run rgym test
 uv run rgym run
 uv run rgym hint
+uv run rgym hint --level 2
 uv run rgym report
 ```
 
-The Bigram Language Model lesson is fully available. The Variational
-Autoencoder lesson remains a lightweight placeholder for a later phase.
+When your implementation is complete, the tests should pass and the demo
+should print a lower final loss than initial loss. Compare your work afterward
+with `tracks/llm/01_bigram_lm/solution.py`.
+
+To erase a workspace and restart:
+
+```bash
+cd ../..
+uv run rgym start llm.01_bigram_lm --force
+```
+
+## Development
+
+Run repository checks:
+
+```bash
+uv sync --locked
+uv run pytest
+uv run ruff check .
+uv run ruff format --check .
+```
+
+Dependencies are declared in `pyproject.toml` and locked in `uv.lock`. Use
+`uv add` or `uv add --dev` when changing them.
+
+## Project documentation
+
+- [Design](docs/design.md): teaching philosophy, lesson anatomy, and AI-tool use
+- [Roadmap](docs/roadmap.md): planned lessons and project milestones
+- [Execution plan](PLANS.md): detailed MVP phases
+- [Contributor and agent guidance](AGENTS.md): repository-wide implementation
+  rules
+
+## Contributing
+
+Keep lessons explicit, small, and CPU-friendly. Scaffolds should teach through
+TODOs and shapes rather than concealing implementation details. Tests should
+check behavior and gradient flow without requiring long training runs.
+
+See `AGENTS.md` before making implementation changes.
