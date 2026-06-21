@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "research-gym"
+version = "0.1.0"
+description = "A CLI-first learning environment for implementing foundational ML ideas."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pyyaml>=6.0.2",
+    "rich>=13.9.4",
+    "torch>=2.6.0",
+    "typer>=0.15.1",
+]
+
+[project.scripts]
+rgym = "rgym.cli:app"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.4",
+    "ruff>=0.9.6",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["rgym"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"

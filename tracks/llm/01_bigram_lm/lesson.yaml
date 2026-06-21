@@ -1,0 +1,8 @@
+id: llm.01_bigram_lm
+title: Bigram Language Model
+track: llm
+level: fundamental
+summary: Build the smallest useful next-token language model.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py

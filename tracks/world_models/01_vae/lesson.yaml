@@ -1,0 +1,8 @@
+id: wm.01_vae
+title: Variational Autoencoder
+track: world_models
+level: fundamental
+summary: Learn a compact latent representation with a variational autoencoder.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py
