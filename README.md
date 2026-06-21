@@ -43,5 +43,5 @@ uv run rgym hint
 uv run rgym report
 ```
 
-The current lessons contain lightweight placeholders. Their full learning
-content is planned for later phases.
+The Bigram Language Model lesson is fully available. The Variational
+Autoencoder lesson remains a lightweight placeholder for a later phase.
