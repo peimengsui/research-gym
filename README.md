@@ -32,16 +32,16 @@ Run the test suite with:
 uv run pytest
 ```
 
-## Planned lesson workflow
-
-Later phases will add commands for creating a workspace and running lesson
-tests and demos:
+## Lesson workspace workflow
 
 ```bash
 uv run rgym start llm.01_bigram_lm
 cd workspace/llm.01_bigram_lm
 uv run rgym test
 uv run rgym run
+uv run rgym hint
+uv run rgym report
 ```
 
-Those workspace commands are intentionally not implemented in Phase 0–1.
+The current lessons contain lightweight placeholders. Their full learning
+content is planned for later phases.
