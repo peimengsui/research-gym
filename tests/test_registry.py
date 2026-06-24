@@ -13,10 +13,12 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
 
     assert [lesson.id for lesson in lessons] == [
         "llm.01_bigram_lm",
+        "llm.02_tokenizer",
         "wm.01_vae",
     ]
     assert lessons[0].title == "Bigram Language Model"
-    assert lessons[1].title == "Variational Autoencoder"
+    assert lessons[1].title == "Tokenizer Fundamentals"
+    assert lessons[2].title == "Variational Autoencoder"
 
 
 def test_get_lesson_returns_requested_lesson() -> None:

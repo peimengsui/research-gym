@@ -9,13 +9,13 @@ and code-level fluency. Timing is directional rather than a release promise.
 - isolated learner workspaces
 - test, demo, hint, and report commands
 - complete Bigram Language Model lesson
+- complete Tokenizer Fundamentals lesson
 - complete Variational Autoencoder lesson
 
 ## Week 3–4
 
 ### Language models
 
-- character and subword tokenizer fundamentals
 - causal self-attention
 - masking and tensor-shape exercises
 

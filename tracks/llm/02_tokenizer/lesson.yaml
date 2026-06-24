@@ -1,0 +1,8 @@
+id: llm.02_tokenizer
+title: Tokenizer Fundamentals
+track: llm
+level: fundamental
+summary: Build a small byte-pair-style tokenizer with reversible merges.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py

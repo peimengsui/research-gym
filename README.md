@@ -42,6 +42,7 @@ uv sync --locked
 ```bash
 uv run rgym list
 uv run rgym inspect llm.01_bigram_lm
+uv run rgym inspect llm.02_tokenizer
 uv run rgym inspect wm.01_vae
 ```
 
@@ -50,6 +51,7 @@ Current lesson status:
 | Lesson | Status |
 | --- | --- |
 | `llm.01_bigram_lm` | Complete |
+| `llm.02_tokenizer` | Complete |
 | `wm.01_vae` | Complete |
 
 ## Start the Bigram Language Model lesson
@@ -89,7 +91,32 @@ cd ../..
 uv run rgym start llm.01_bigram_lm --force
 ```
 
+## Start the Tokenizer Fundamentals lesson
+
+From the repository root:
+
+```bash
+uv run rgym start llm.02_tokenizer
+cd workspace/llm.02_tokenizer
+uv run rgym test
+```
+
+Implement pair counting, non-overlapping merges, deterministic training,
+encoding, decoding, and unknown-character handling in `implementation.py`.
+
+```bash
+uv run rgym test
+uv run rgym run
+uv run rgym hint
+uv run rgym report
+```
+
+Compare your completed work with
+`tracks/llm/02_tokenizer/solution.py` from the repository root.
+
 ## Start the Variational Autoencoder lesson
+
+From the repository root:
 
 ```bash
 uv run rgym start wm.01_vae

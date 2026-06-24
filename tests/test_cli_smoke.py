@@ -15,12 +15,14 @@ def test_help() -> None:
     assert "Learn foundational ML ideas" in result.stdout
 
 
-def test_list_shows_both_lessons() -> None:
+def test_list_shows_available_lessons() -> None:
     result = runner.invoke(app, ["list"])
 
     assert result.exit_code == 0
     assert "llm.01_bigram_lm" in result.stdout
     assert "Bigram Language Model" in result.stdout
+    assert "llm.02_tokenizer" in result.stdout
+    assert "Tokenizer Fundamentals" in result.stdout
     assert "wm.01_vae" in result.stdout
     assert "Variational Autoencoder" in result.stdout
 
