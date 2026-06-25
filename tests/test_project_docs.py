@@ -24,9 +24,11 @@ def test_readme_contains_complete_workspace_workflow() -> None:
         "uv run rgym inspect llm.01_bigram_lm",
         "uv run rgym inspect llm.02_tokenizer",
         "uv run rgym inspect wm.01_vae",
+        "uv run rgym inspect wm.02_latent_dynamics",
         "uv run rgym start llm.01_bigram_lm",
         "uv run rgym start llm.02_tokenizer",
         "uv run rgym start wm.01_vae",
+        "uv run rgym start wm.02_latent_dynamics",
         "uv run rgym test",
         "uv run rgym run",
         "uv run rgym hint",
@@ -51,6 +53,7 @@ def test_mvp_lessons_have_complete_structure() -> None:
         PROJECT_ROOT / "tracks" / "llm" / "01_bigram_lm",
         PROJECT_ROOT / "tracks" / "llm" / "02_tokenizer",
         PROJECT_ROOT / "tracks" / "world_models" / "01_vae",
+        PROJECT_ROOT / "tracks" / "world_models" / "02_latent_dynamics",
     ]
     required_paths = [
         "lesson.yaml",

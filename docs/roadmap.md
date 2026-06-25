@@ -11,6 +11,7 @@ and code-level fluency. Timing is directional rather than a release promise.
 - complete Bigram Language Model lesson
 - complete Tokenizer Fundamentals lesson
 - complete Variational Autoencoder lesson
+- complete Latent Dynamics lesson
 
 ## Week 3–4
 
@@ -21,7 +22,6 @@ and code-level fluency. Timing is directional rather than a release promise.
 
 ### World models
 
-- latent dynamics fundamentals
 - MDN-RNN implementation
 
 ## Month 2

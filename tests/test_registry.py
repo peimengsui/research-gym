@@ -15,18 +15,20 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
         "llm.01_bigram_lm",
         "llm.02_tokenizer",
         "wm.01_vae",
+        "wm.02_latent_dynamics",
     ]
     assert lessons[0].title == "Bigram Language Model"
     assert lessons[1].title == "Tokenizer Fundamentals"
     assert lessons[2].title == "Variational Autoencoder"
+    assert lessons[3].title == "Latent Dynamics"
 
 
 def test_get_lesson_returns_requested_lesson() -> None:
-    lesson = get_lesson(PROJECT_ROOT, "wm.01_vae")
+    lesson = get_lesson(PROJECT_ROOT, "wm.02_latent_dynamics")
 
     assert lesson.track == "world_models"
     assert lesson.entrypoint == "implementation.py"
-    assert lesson.path.name == "01_vae"
+    assert lesson.path.name == "02_latent_dynamics"
 
 
 def test_get_lesson_rejects_unknown_id() -> None:

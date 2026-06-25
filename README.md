@@ -44,6 +44,7 @@ uv run rgym list
 uv run rgym inspect llm.01_bigram_lm
 uv run rgym inspect llm.02_tokenizer
 uv run rgym inspect wm.01_vae
+uv run rgym inspect wm.02_latent_dynamics
 ```
 
 Current lesson status:
@@ -53,6 +54,7 @@ Current lesson status:
 | `llm.01_bigram_lm` | Complete |
 | `llm.02_tokenizer` | Complete |
 | `wm.01_vae` | Complete |
+| `wm.02_latent_dynamics` | Complete |
 
 ## Start the Bigram Language Model lesson
 
@@ -139,6 +141,32 @@ uv run rgym report
 
 Compare your completed work with
 `tracks/world_models/01_vae/solution.py` from the repository root.
+
+## Start the Latent Dynamics lesson
+
+From the repository root:
+
+```bash
+uv run rgym start wm.02_latent_dynamics
+cd workspace/wm.02_latent_dynamics
+uv run rgym test
+```
+
+Read `concept.md` and `guide.md`, then implement transition batching,
+one-step next-latent prediction, autoregressive rollout, and mean-squared
+dynamics loss in `implementation.py`.
+
+Use the same test, demo, hint, and report workflow:
+
+```bash
+uv run rgym test
+uv run rgym run
+uv run rgym hint
+uv run rgym report
+```
+
+Compare your completed work with
+`tracks/world_models/02_latent_dynamics/solution.py` from the repository root.
 
 ## Development
 

@@ -15,7 +15,12 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 @pytest.mark.parametrize(
     "lesson_id",
-    ["llm.01_bigram_lm", "llm.02_tokenizer", "wm.01_vae"],
+    [
+        "llm.01_bigram_lm",
+        "llm.02_tokenizer",
+        "wm.01_vae",
+        "wm.02_latent_dynamics",
+    ],
 )
 def test_solution_passes_lesson_tests(tmp_path: Path, lesson_id: str) -> None:
     lesson = get_lesson(PROJECT_ROOT, lesson_id)
