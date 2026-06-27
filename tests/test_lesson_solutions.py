@@ -23,6 +23,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
         "wm.01_vae",
         "wm.02_latent_dynamics",
         "wm.03_mdn_rnn",
+        "wm.04_world_model_loop",
     ],
 )
 def test_solution_passes_lesson_tests(tmp_path: Path, lesson_id: str) -> None:

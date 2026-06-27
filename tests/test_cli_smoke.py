@@ -33,6 +33,8 @@ def test_list_shows_available_lessons() -> None:
     assert "Latent Dynamics" in result.stdout
     assert "wm.03_mdn_rnn" in result.stdout
     assert "MDN-RNN" in result.stdout
+    assert "wm.04_world_model_loop" in result.stdout
+    assert "World Model Loop" in result.stdout
 
 
 def test_inspect_shows_lesson_details() -> None:

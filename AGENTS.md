@@ -212,6 +212,20 @@ research-gym/
         scripts/
           run_demo.py
 
+      04_world_model_loop/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        hints.md
+        review.md
+        tests/
+          test_world_model_loop.py
+        scripts/
+          run_demo.py
+
   tests/
     test_registry.py
     test_cli_smoke.py

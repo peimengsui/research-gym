@@ -15,6 +15,7 @@ and code-level fluency. Timing is directional rather than a release promise.
 - complete Variational Autoencoder lesson
 - complete Latent Dynamics lesson
 - complete MDN-RNN lesson
+- complete World Model Loop lesson
 
 ## Week 3–4
 
@@ -24,7 +25,7 @@ and code-level fluency. Timing is directional rather than a release promise.
 
 ### World models
 
-- compact end-to-end world-model exercise
+- CEM planning with imagined rollouts
 
 ## Month 2
 

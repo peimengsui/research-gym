@@ -48,6 +48,7 @@ uv run rgym inspect llm.04_transformer_block
 uv run rgym inspect wm.01_vae
 uv run rgym inspect wm.02_latent_dynamics
 uv run rgym inspect wm.03_mdn_rnn
+uv run rgym inspect wm.04_world_model_loop
 ```
 
 Current lesson status:
@@ -61,6 +62,7 @@ Current lesson status:
 | `wm.01_vae` | Complete |
 | `wm.02_latent_dynamics` | Complete |
 | `wm.03_mdn_rnn` | Complete |
+| `wm.04_world_model_loop` | Complete |
 
 ## Start the Bigram Language Model lesson
 
@@ -250,6 +252,32 @@ uv run rgym report
 
 Compare your completed work with
 `tracks/world_models/03_mdn_rnn/solution.py` from the repository root.
+
+## Start the World Model Loop lesson
+
+From the repository root:
+
+```bash
+uv run rgym start wm.04_world_model_loop
+cd workspace/wm.04_world_model_loop
+uv run rgym test
+```
+
+Read `concept.md` and `guide.md`, then implement observation batching, the
+encoder/dynamics/decoder loop, world-model losses, and imagined rollouts in
+`implementation.py`.
+
+Use the same test, demo, hint, and report workflow:
+
+```bash
+uv run rgym test
+uv run rgym run
+uv run rgym hint
+uv run rgym report
+```
+
+Compare your completed work with
+`tracks/world_models/04_world_model_loop/solution.py` from the repository root.
 
 ## Development
 
