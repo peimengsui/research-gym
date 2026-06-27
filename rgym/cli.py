@@ -41,8 +41,8 @@ def list_lessons() -> None:
         return
 
     table = Table(show_header=True, header_style="bold")
-    table.add_column("Lesson ID")
-    table.add_column("Title")
+    table.add_column("Lesson ID", no_wrap=True)
+    table.add_column("Title", no_wrap=True)
     table.add_column("Track")
     table.add_column("Level")
     for lesson in lessons:

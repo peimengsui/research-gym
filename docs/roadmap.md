@@ -10,6 +10,7 @@ and code-level fluency. Timing is directional rather than a release promise.
 - test, demo, hint, and report commands
 - complete Bigram Language Model lesson
 - complete Tokenizer Fundamentals lesson
+- complete Causal Self-Attention lesson
 - complete Variational Autoencoder lesson
 - complete Latent Dynamics lesson
 
@@ -17,8 +18,7 @@ and code-level fluency. Timing is directional rather than a release promise.
 
 ### Language models
 
-- causal self-attention
-- masking and tensor-shape exercises
+- transformer block fundamentals
 
 ### World models
 

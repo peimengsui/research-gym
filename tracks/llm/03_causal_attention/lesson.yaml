@@ -1,0 +1,8 @@
+id: llm.03_causal_attention
+title: Causal Self-Attention
+track: llm
+level: fundamental
+summary: Implement masked scaled dot-product attention for autoregressive models.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py
