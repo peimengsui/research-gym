@@ -14,6 +14,7 @@ and code-level fluency. Timing is directional rather than a release promise.
 - complete Transformer Block lesson
 - complete Variational Autoencoder lesson
 - complete Latent Dynamics lesson
+- complete MDN-RNN lesson
 
 ## Week 3–4
 
@@ -23,14 +24,13 @@ and code-level fluency. Timing is directional rather than a release promise.
 
 ### World models
 
-- MDN-RNN implementation
+- compact end-to-end world-model exercise
 
 ## Month 2
 
 - tiny GPT assembled from embeddings, attention, and MLP blocks
 - KV-cache implementation and decoding comparison
 - cross-entropy method (CEM) planning
-- compact end-to-end world-model exercise
 
 ## Month 3+
 

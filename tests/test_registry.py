@@ -18,6 +18,7 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
         "llm.04_transformer_block",
         "wm.01_vae",
         "wm.02_latent_dynamics",
+        "wm.03_mdn_rnn",
     ]
     assert lessons[0].title == "Bigram Language Model"
     assert lessons[1].title == "Tokenizer Fundamentals"
@@ -25,6 +26,7 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
     assert lessons[3].title == "Transformer Block"
     assert lessons[4].title == "Variational Autoencoder"
     assert lessons[5].title == "Latent Dynamics"
+    assert lessons[6].title == "MDN-RNN"
 
 
 def test_get_lesson_returns_requested_lesson() -> None:

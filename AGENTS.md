@@ -198,6 +198,20 @@ research-gym/
         scripts/
           run_demo.py
 
+      03_mdn_rnn/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        hints.md
+        review.md
+        tests/
+          test_mdn_rnn.py
+        scripts/
+          run_demo.py
+
   tests/
     test_registry.py
     test_cli_smoke.py

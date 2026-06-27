@@ -47,6 +47,7 @@ uv run rgym inspect llm.03_causal_attention
 uv run rgym inspect llm.04_transformer_block
 uv run rgym inspect wm.01_vae
 uv run rgym inspect wm.02_latent_dynamics
+uv run rgym inspect wm.03_mdn_rnn
 ```
 
 Current lesson status:
@@ -59,6 +60,7 @@ Current lesson status:
 | `llm.04_transformer_block` | Complete |
 | `wm.01_vae` | Complete |
 | `wm.02_latent_dynamics` | Complete |
+| `wm.03_mdn_rnn` | Complete |
 
 ## Start the Bigram Language Model lesson
 
@@ -222,6 +224,32 @@ uv run rgym report
 
 Compare your completed work with
 `tracks/world_models/02_latent_dynamics/solution.py` from the repository root.
+
+## Start the MDN-RNN lesson
+
+From the repository root:
+
+```bash
+uv run rgym start wm.03_mdn_rnn
+cd workspace/wm.03_mdn_rnn
+uv run rgym test
+```
+
+Read `concept.md` and `guide.md`, then implement sequence batching, recurrent
+mixture parameter prediction, Gaussian mixture negative log likelihood, and
+mixture-mean prediction in `implementation.py`.
+
+Use the same test, demo, hint, and report workflow:
+
+```bash
+uv run rgym test
+uv run rgym run
+uv run rgym hint
+uv run rgym report
+```
+
+Compare your completed work with
+`tracks/world_models/03_mdn_rnn/solution.py` from the repository root.
 
 ## Development
 
