@@ -1,0 +1,8 @@
+id: llm.04_transformer_block
+title: Transformer Block
+track: llm
+level: fundamental
+summary: Combine causal attention, residual connections, layer normalization, and an MLP.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py

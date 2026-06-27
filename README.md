@@ -44,6 +44,7 @@ uv run rgym list
 uv run rgym inspect llm.01_bigram_lm
 uv run rgym inspect llm.02_tokenizer
 uv run rgym inspect llm.03_causal_attention
+uv run rgym inspect llm.04_transformer_block
 uv run rgym inspect wm.01_vae
 uv run rgym inspect wm.02_latent_dynamics
 ```
@@ -55,6 +56,7 @@ Current lesson status:
 | `llm.01_bigram_lm` | Complete |
 | `llm.02_tokenizer` | Complete |
 | `llm.03_causal_attention` | Complete |
+| `llm.04_transformer_block` | Complete |
 | `wm.01_vae` | Complete |
 | `wm.02_latent_dynamics` | Complete |
 
@@ -143,6 +145,31 @@ uv run rgym report
 
 Compare your completed work with
 `tracks/llm/03_causal_attention/solution.py` from the repository root.
+
+## Start the Transformer Block lesson
+
+From the repository root:
+
+```bash
+uv run rgym start llm.04_transformer_block
+cd workspace/llm.04_transformer_block
+uv run rgym test
+```
+
+Read `concept.md` and `guide.md`, then implement the feed-forward MLP and the
+pre-norm residual Transformer block in `implementation.py`.
+
+Use the same test, demo, hint, and report workflow:
+
+```bash
+uv run rgym test
+uv run rgym run
+uv run rgym hint
+uv run rgym report
+```
+
+Compare your completed work with
+`tracks/llm/04_transformer_block/solution.py` from the repository root.
 
 ## Start the Variational Autoencoder lesson
 
