@@ -39,40 +39,33 @@ uv sync --locked
 
 ## Discover lessons
 
+List all registered lessons:
+
 ```bash
 uv run rgym list
-uv run rgym inspect llm.01_bigram_lm
-uv run rgym inspect llm.02_tokenizer
-uv run rgym inspect llm.03_causal_attention
-uv run rgym inspect llm.04_transformer_block
-uv run rgym inspect llm.05_tiny_gpt
-uv run rgym inspect wm.01_vae
-uv run rgym inspect wm.02_latent_dynamics
-uv run rgym inspect wm.03_mdn_rnn
-uv run rgym inspect wm.04_world_model_loop
 ```
 
-Current lesson status:
-
-| Lesson | Status |
-| --- | --- |
-| `llm.01_bigram_lm` | Complete |
-| `llm.02_tokenizer` | Complete |
-| `llm.03_causal_attention` | Complete |
-| `llm.04_transformer_block` | Complete |
-| `llm.05_tiny_gpt` | Complete |
-| `wm.01_vae` | Complete |
-| `wm.02_latent_dynamics` | Complete |
-| `wm.03_mdn_rnn` | Complete |
-| `wm.04_world_model_loop` | Complete |
-
-## Start the Bigram Language Model lesson
-
-Create a disposable learner workspace:
+Inspect any lesson by ID:
 
 ```bash
-uv run rgym start llm.01_bigram_lm
-cd workspace/llm.01_bigram_lm
+uv run rgym inspect <lesson_id>
+```
+
+For example:
+
+```bash
+uv run rgym inspect llm.05_tiny_gpt
+```
+
+## Start any lesson
+
+Pick a lesson ID from `uv run rgym list`, then create a disposable learner
+workspace:
+
+```bash
+LESSON_ID=llm.05_tiny_gpt
+uv run rgym start "$LESSON_ID"
+cd "workspace/$LESSON_ID"
 ```
 
 Read `concept.md` and `guide.md`, then edit `implementation.py`. The first test
@@ -92,220 +85,17 @@ uv run rgym hint --level 2
 uv run rgym report
 ```
 
-When your implementation is complete, the tests should pass and the demo
-should print a lower final loss than initial loss. Compare your work afterward
-with `tracks/llm/01_bigram_lm/solution.py`.
+When your implementation is complete, the lesson tests should pass and the demo
+should show the lesson-specific behavior described in that lesson's README.
+Compare your work afterward with the lesson's `solution.py` in `tracks/`.
 
 To erase a workspace and restart:
 
 ```bash
 cd ../..
-uv run rgym start llm.01_bigram_lm --force
+uv run rgym start "$LESSON_ID" --force
+cd "workspace/$LESSON_ID"
 ```
-
-## Start the Tokenizer Fundamentals lesson
-
-From the repository root:
-
-```bash
-uv run rgym start llm.02_tokenizer
-cd workspace/llm.02_tokenizer
-uv run rgym test
-```
-
-Implement pair counting, non-overlapping merges, deterministic training,
-encoding, decoding, and unknown-character handling in `implementation.py`.
-
-```bash
-uv run rgym test
-uv run rgym run
-uv run rgym hint
-uv run rgym report
-```
-
-Compare your completed work with
-`tracks/llm/02_tokenizer/solution.py` from the repository root.
-
-## Start the Causal Self-Attention lesson
-
-From the repository root:
-
-```bash
-uv run rgym start llm.03_causal_attention
-cd workspace/llm.03_causal_attention
-uv run rgym test
-```
-
-Read `concept.md` and `guide.md`, then implement the causal mask, scaled
-dot-product attention, and single-head causal self-attention layer in
-`implementation.py`.
-
-Use the same test, demo, hint, and report workflow:
-
-```bash
-uv run rgym test
-uv run rgym run
-uv run rgym hint
-uv run rgym report
-```
-
-Compare your completed work with
-`tracks/llm/03_causal_attention/solution.py` from the repository root.
-
-## Start the Transformer Block lesson
-
-From the repository root:
-
-```bash
-uv run rgym start llm.04_transformer_block
-cd workspace/llm.04_transformer_block
-uv run rgym test
-```
-
-Read `concept.md` and `guide.md`, then implement the feed-forward MLP and the
-pre-norm residual Transformer block in `implementation.py`.
-
-Use the same test, demo, hint, and report workflow:
-
-```bash
-uv run rgym test
-uv run rgym run
-uv run rgym hint
-uv run rgym report
-```
-
-Compare your completed work with
-`tracks/llm/04_transformer_block/solution.py` from the repository root.
-
-## Start the Tiny GPT lesson
-
-From the repository root:
-
-```bash
-uv run rgym start llm.05_tiny_gpt
-cd workspace/llm.05_tiny_gpt
-uv run rgym test
-```
-
-Read `concept.md` and `guide.md`, then implement language-model batching,
-token and positional embeddings, Transformer block stacking, next-token loss,
-and autoregressive generation in `implementation.py`.
-
-Use the same test, demo, hint, and report workflow:
-
-```bash
-uv run rgym test
-uv run rgym run
-uv run rgym hint
-uv run rgym report
-```
-
-Compare your completed work with
-`tracks/llm/05_tiny_gpt/solution.py` from the repository root.
-
-## Start the Variational Autoencoder lesson
-
-From the repository root:
-
-```bash
-uv run rgym start wm.01_vae
-cd workspace/wm.01_vae
-uv run rgym test
-```
-
-Read `concept.md` and `guide.md`, then implement the encoder, latent
-distribution, reparameterization trick, decoder, and VAE loss in
-`implementation.py`.
-
-Use the same test, demo, hint, and report workflow:
-
-```bash
-uv run rgym test
-uv run rgym run
-uv run rgym hint
-uv run rgym report
-```
-
-Compare your completed work with
-`tracks/world_models/01_vae/solution.py` from the repository root.
-
-## Start the Latent Dynamics lesson
-
-From the repository root:
-
-```bash
-uv run rgym start wm.02_latent_dynamics
-cd workspace/wm.02_latent_dynamics
-uv run rgym test
-```
-
-Read `concept.md` and `guide.md`, then implement transition batching,
-one-step next-latent prediction, autoregressive rollout, and mean-squared
-dynamics loss in `implementation.py`.
-
-Use the same test, demo, hint, and report workflow:
-
-```bash
-uv run rgym test
-uv run rgym run
-uv run rgym hint
-uv run rgym report
-```
-
-Compare your completed work with
-`tracks/world_models/02_latent_dynamics/solution.py` from the repository root.
-
-## Start the MDN-RNN lesson
-
-From the repository root:
-
-```bash
-uv run rgym start wm.03_mdn_rnn
-cd workspace/wm.03_mdn_rnn
-uv run rgym test
-```
-
-Read `concept.md` and `guide.md`, then implement sequence batching, recurrent
-mixture parameter prediction, Gaussian mixture negative log likelihood, and
-mixture-mean prediction in `implementation.py`.
-
-Use the same test, demo, hint, and report workflow:
-
-```bash
-uv run rgym test
-uv run rgym run
-uv run rgym hint
-uv run rgym report
-```
-
-Compare your completed work with
-`tracks/world_models/03_mdn_rnn/solution.py` from the repository root.
-
-## Start the World Model Loop lesson
-
-From the repository root:
-
-```bash
-uv run rgym start wm.04_world_model_loop
-cd workspace/wm.04_world_model_loop
-uv run rgym test
-```
-
-Read `concept.md` and `guide.md`, then implement observation batching, the
-encoder/dynamics/decoder loop, world-model losses, and imagined rollouts in
-`implementation.py`.
-
-Use the same test, demo, hint, and report workflow:
-
-```bash
-uv run rgym test
-uv run rgym run
-uv run rgym hint
-uv run rgym report
-```
-
-Compare your completed work with
-`tracks/world_models/04_world_model_loop/solution.py` from the repository root.
 
 ## Development
 

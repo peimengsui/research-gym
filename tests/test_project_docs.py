@@ -16,36 +16,26 @@ def test_required_project_documentation_exists() -> None:
     assert all(path.is_file() for path in required_files)
 
 
-def test_readme_contains_complete_workspace_workflow() -> None:
+def test_readme_contains_generic_workspace_workflow() -> None:
     readme = (PROJECT_ROOT / "README.md").read_text(encoding="utf-8")
     commands = [
         "uv sync --locked",
         "uv run rgym list",
-        "uv run rgym inspect llm.01_bigram_lm",
-        "uv run rgym inspect llm.02_tokenizer",
-        "uv run rgym inspect llm.03_causal_attention",
-        "uv run rgym inspect llm.04_transformer_block",
-        "uv run rgym inspect llm.05_tiny_gpt",
-        "uv run rgym inspect wm.01_vae",
-        "uv run rgym inspect wm.02_latent_dynamics",
-        "uv run rgym inspect wm.03_mdn_rnn",
-        "uv run rgym inspect wm.04_world_model_loop",
-        "uv run rgym start llm.01_bigram_lm",
-        "uv run rgym start llm.02_tokenizer",
-        "uv run rgym start llm.03_causal_attention",
-        "uv run rgym start llm.04_transformer_block",
-        "uv run rgym start llm.05_tiny_gpt",
-        "uv run rgym start wm.01_vae",
-        "uv run rgym start wm.02_latent_dynamics",
-        "uv run rgym start wm.03_mdn_rnn",
-        "uv run rgym start wm.04_world_model_loop",
+        "uv run rgym inspect <lesson_id>",
+        "LESSON_ID=llm.05_tiny_gpt",
+        'uv run rgym start "$LESSON_ID"',
+        'cd "workspace/$LESSON_ID"',
         "uv run rgym test",
         "uv run rgym run",
         "uv run rgym hint",
+        "uv run rgym hint --level 2",
         "uv run rgym report",
+        'uv run rgym start "$LESSON_ID" --force',
     ]
 
     assert all(command in readme for command in commands)
+    assert "## Start the Bigram Language Model lesson" not in readme
+    assert "## Start the Variational Autoencoder lesson" not in readme
 
 
 def test_repository_contains_no_notebooks() -> None:
