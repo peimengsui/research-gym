@@ -27,6 +27,8 @@ def test_list_shows_available_lessons() -> None:
     assert "Causal Self-Attention" in result.stdout
     assert "llm.04_transformer_block" in result.stdout
     assert "Transformer Block" in result.stdout
+    assert "llm.05_tiny_gpt" in result.stdout
+    assert "Tiny GPT" in result.stdout
     assert "wm.01_vae" in result.stdout
     assert "Variational Autoencoder" in result.stdout
     assert "wm.02_latent_dynamics" in result.stdout

@@ -20,6 +20,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
         "llm.02_tokenizer",
         "llm.03_causal_attention",
         "llm.04_transformer_block",
+        "llm.05_tiny_gpt",
         "wm.01_vae",
         "wm.02_latent_dynamics",
         "wm.03_mdn_rnn",

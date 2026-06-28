@@ -45,6 +45,7 @@ uv run rgym inspect llm.01_bigram_lm
 uv run rgym inspect llm.02_tokenizer
 uv run rgym inspect llm.03_causal_attention
 uv run rgym inspect llm.04_transformer_block
+uv run rgym inspect llm.05_tiny_gpt
 uv run rgym inspect wm.01_vae
 uv run rgym inspect wm.02_latent_dynamics
 uv run rgym inspect wm.03_mdn_rnn
@@ -59,6 +60,7 @@ Current lesson status:
 | `llm.02_tokenizer` | Complete |
 | `llm.03_causal_attention` | Complete |
 | `llm.04_transformer_block` | Complete |
+| `llm.05_tiny_gpt` | Complete |
 | `wm.01_vae` | Complete |
 | `wm.02_latent_dynamics` | Complete |
 | `wm.03_mdn_rnn` | Complete |
@@ -174,6 +176,32 @@ uv run rgym report
 
 Compare your completed work with
 `tracks/llm/04_transformer_block/solution.py` from the repository root.
+
+## Start the Tiny GPT lesson
+
+From the repository root:
+
+```bash
+uv run rgym start llm.05_tiny_gpt
+cd workspace/llm.05_tiny_gpt
+uv run rgym test
+```
+
+Read `concept.md` and `guide.md`, then implement language-model batching,
+token and positional embeddings, Transformer block stacking, next-token loss,
+and autoregressive generation in `implementation.py`.
+
+Use the same test, demo, hint, and report workflow:
+
+```bash
+uv run rgym test
+uv run rgym run
+uv run rgym hint
+uv run rgym report
+```
+
+Compare your completed work with
+`tracks/llm/05_tiny_gpt/solution.py` from the repository root.
 
 ## Start the Variational Autoencoder lesson
 

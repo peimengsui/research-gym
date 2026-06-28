@@ -1,0 +1,8 @@
+id: llm.05_tiny_gpt
+title: Tiny GPT
+track: llm
+level: fundamental
+summary: Assemble token embeddings, positional embeddings, Transformer blocks, and generation.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py

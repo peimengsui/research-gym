@@ -12,6 +12,7 @@ and code-level fluency. Timing is directional rather than a release promise.
 - complete Tokenizer Fundamentals lesson
 - complete Causal Self-Attention lesson
 - complete Transformer Block lesson
+- complete Tiny GPT lesson
 - complete Variational Autoencoder lesson
 - complete Latent Dynamics lesson
 - complete MDN-RNN lesson
@@ -21,7 +22,7 @@ and code-level fluency. Timing is directional rather than a release promise.
 
 ### Language models
 
-- tiny GPT assembly from token embeddings, positional embeddings, and blocks
+- KV-cache implementation and decoding comparison
 
 ### World models
 
@@ -29,8 +30,6 @@ and code-level fluency. Timing is directional rather than a release promise.
 
 ## Month 2
 
-- tiny GPT assembled from embeddings, attention, and MLP blocks
-- KV-cache implementation and decoding comparison
 - cross-entropy method (CEM) planning
 
 ## Month 3+
