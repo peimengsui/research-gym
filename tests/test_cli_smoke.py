@@ -37,6 +37,8 @@ def test_list_shows_available_lessons() -> None:
     assert "MDN-RNN" in result.stdout
     assert "wm.04_world_model_loop" in result.stdout
     assert "World Model Loop" in result.stdout
+    assert "wm.05_cem_planning" in result.stdout
+    assert "CEM Planning" in result.stdout
 
 
 def test_inspect_shows_lesson_details() -> None:

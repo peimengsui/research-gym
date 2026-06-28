@@ -21,6 +21,7 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
         "wm.02_latent_dynamics",
         "wm.03_mdn_rnn",
         "wm.04_world_model_loop",
+        "wm.05_cem_planning",
     ]
     assert lessons[0].title == "Bigram Language Model"
     assert lessons[1].title == "Tokenizer Fundamentals"
@@ -31,6 +32,7 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
     assert lessons[6].title == "Latent Dynamics"
     assert lessons[7].title == "MDN-RNN"
     assert lessons[8].title == "World Model Loop"
+    assert lessons[9].title == "CEM Planning"
 
 
 def test_get_lesson_returns_requested_lesson() -> None:

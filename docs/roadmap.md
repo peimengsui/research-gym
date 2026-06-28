@@ -17,6 +17,7 @@ and code-level fluency. Timing is directional rather than a release promise.
 - complete Latent Dynamics lesson
 - complete MDN-RNN lesson
 - complete World Model Loop lesson
+- complete CEM Planning lesson
 
 ## Week 3–4
 
@@ -26,15 +27,10 @@ and code-level fluency. Timing is directional rather than a release promise.
 
 ### World models
 
-- CEM planning with imagined rollouts
-
-## Month 2
-
-- cross-entropy method (CEM) planning
+- Dreamer-lite latent imagination and actor-critic components
 
 ## Month 3+
 
-- Dreamer-lite latent imagination and actor-critic components
 - direct preference optimization (DPO)
 - small vision-language model lab
 - lesson authoring validation and contribution templates

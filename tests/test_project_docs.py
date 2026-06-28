@@ -59,6 +59,7 @@ def test_mvp_lessons_have_complete_structure() -> None:
         PROJECT_ROOT / "tracks" / "world_models" / "02_latent_dynamics",
         PROJECT_ROOT / "tracks" / "world_models" / "03_mdn_rnn",
         PROJECT_ROOT / "tracks" / "world_models" / "04_world_model_loop",
+        PROJECT_ROOT / "tracks" / "world_models" / "05_cem_planning",
     ]
     required_paths = [
         "lesson.yaml",
