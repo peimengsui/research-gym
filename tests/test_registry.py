@@ -17,6 +17,7 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
         "llm.03_causal_attention",
         "llm.04_transformer_block",
         "llm.05_tiny_gpt",
+        "llm.06_kv_cache",
         "wm.01_vae",
         "wm.02_latent_dynamics",
         "wm.03_mdn_rnn",
@@ -28,11 +29,12 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
     assert lessons[2].title == "Causal Self-Attention"
     assert lessons[3].title == "Transformer Block"
     assert lessons[4].title == "Tiny GPT"
-    assert lessons[5].title == "Variational Autoencoder"
-    assert lessons[6].title == "Latent Dynamics"
-    assert lessons[7].title == "MDN-RNN"
-    assert lessons[8].title == "World Model Loop"
-    assert lessons[9].title == "CEM Planning"
+    assert lessons[5].title == "KV Cache"
+    assert lessons[6].title == "Variational Autoencoder"
+    assert lessons[7].title == "Latent Dynamics"
+    assert lessons[8].title == "MDN-RNN"
+    assert lessons[9].title == "World Model Loop"
+    assert lessons[10].title == "CEM Planning"
 
 
 def test_get_lesson_returns_requested_lesson() -> None:

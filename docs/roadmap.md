@@ -13,6 +13,7 @@ and code-level fluency. Timing is directional rather than a release promise.
 - complete Causal Self-Attention lesson
 - complete Transformer Block lesson
 - complete Tiny GPT lesson
+- complete KV Cache lesson
 - complete Variational Autoencoder lesson
 - complete Latent Dynamics lesson
 - complete MDN-RNN lesson
@@ -23,7 +24,7 @@ and code-level fluency. Timing is directional rather than a release promise.
 
 ### Language models
 
-- KV-cache implementation and decoding comparison
+- direct preference optimization (DPO)
 
 ### World models
 
@@ -31,7 +32,6 @@ and code-level fluency. Timing is directional rather than a release promise.
 
 ## Month 3+
 
-- direct preference optimization (DPO)
 - small vision-language model lab
 - lesson authoring validation and contribution templates
 - richer reports that summarize tests, demos, and learner reflection
