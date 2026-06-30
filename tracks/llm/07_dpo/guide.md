@@ -46,7 +46,7 @@ Compute:
 policy_margin = policy_chosen_logps - policy_rejected_logps
 ref_margin = reference_chosen_logps - reference_rejected_logps
 logits = beta * (policy_margin - ref_margin)
-loss = -logsigmoid(logits).mean()
+loss = binary_cross_entropy_with_logits(logits, target=1)
 ```
 
 Return both the scalar loss and a small stats object. The stats are detached so

@@ -125,7 +125,10 @@ def dpo_loss(
     policy_margin = policy_chosen_logps - policy_rejected_logps
     reference_margin = reference_chosen_logps - reference_rejected_logps
     preference_logits = beta * (policy_margin - reference_margin)
-    loss = -F.logsigmoid(preference_logits).mean()
+    loss = F.binary_cross_entropy_with_logits(
+        preference_logits,
+        torch.ones_like(preference_logits),
+    )
     preference_accuracy = (policy_margin > reference_margin).float().mean()
     stats = DPOStats(
         loss=loss.detach(),

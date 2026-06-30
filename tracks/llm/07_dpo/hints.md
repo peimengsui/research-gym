@@ -23,4 +23,5 @@ log-probability calls.
 
 ## Hint 4
 
-`F.logsigmoid(x)` is numerically cleaner than `torch.log(torch.sigmoid(x))`.
+`F.binary_cross_entropy_with_logits(x, torch.ones_like(x))` is the same as
+`-log(sigmoid(x)).mean()`, but avoids manually composing sigmoid and log.

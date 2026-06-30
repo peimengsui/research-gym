@@ -121,7 +121,7 @@ def dpo_loss(
     # policy_margin = policy_chosen_logps - policy_rejected_logps
     # reference_margin = reference_chosen_logps - reference_rejected_logps
     # logits = beta * (policy_margin - reference_margin)
-    # loss = -F.logsigmoid(logits).mean()
+    # loss = F.binary_cross_entropy_with_logits(logits, torch.ones_like(logits))
     # preference_accuracy measures how often policy_margin > reference_margin.
     raise NotImplementedError
 
