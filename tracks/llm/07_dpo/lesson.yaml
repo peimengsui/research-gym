@@ -1,0 +1,8 @@
+id: llm.07_dpo
+title: Direct Preference Optimization
+track: llm
+level: intermediate
+summary: Implement the DPO loss for tiny preference pairs.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py

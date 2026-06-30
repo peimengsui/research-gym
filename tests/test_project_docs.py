@@ -56,6 +56,7 @@ def test_mvp_lessons_have_complete_structure() -> None:
         PROJECT_ROOT / "tracks" / "llm" / "04_transformer_block",
         PROJECT_ROOT / "tracks" / "llm" / "05_tiny_gpt",
         PROJECT_ROOT / "tracks" / "llm" / "06_kv_cache",
+        PROJECT_ROOT / "tracks" / "llm" / "07_dpo",
         PROJECT_ROOT / "tracks" / "world_models" / "01_vae",
         PROJECT_ROOT / "tracks" / "world_models" / "02_latent_dynamics",
         PROJECT_ROOT / "tracks" / "world_models" / "03_mdn_rnn",

@@ -14,6 +14,7 @@ and code-level fluency. Timing is directional rather than a release promise.
 - complete Transformer Block lesson
 - complete Tiny GPT lesson
 - complete KV Cache lesson
+- complete Direct Preference Optimization lesson
 - complete Variational Autoencoder lesson
 - complete Latent Dynamics lesson
 - complete MDN-RNN lesson
@@ -24,7 +25,7 @@ and code-level fluency. Timing is directional rather than a release promise.
 
 ### Language models
 
-- direct preference optimization (DPO)
+- supervised fine-tuning and instruction data preparation
 
 ### World models
 

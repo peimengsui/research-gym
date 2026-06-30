@@ -22,6 +22,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
         "llm.04_transformer_block",
         "llm.05_tiny_gpt",
         "llm.06_kv_cache",
+        "llm.07_dpo",
         "wm.01_vae",
         "wm.02_latent_dynamics",
         "wm.03_mdn_rnn",
