@@ -15,6 +15,7 @@ and code-level fluency. Timing is directional rather than a release promise.
 - complete Tiny GPT lesson
 - complete KV Cache lesson
 - complete Direct Preference Optimization lesson
+- complete Supervised Fine-Tuning Data lesson
 - complete Variational Autoencoder lesson
 - complete Latent Dynamics lesson
 - complete MDN-RNN lesson
@@ -25,7 +26,7 @@ and code-level fluency. Timing is directional rather than a release promise.
 
 ### Language models
 
-- supervised fine-tuning and instruction data preparation
+- LoRA low-rank adaptation
 
 ### World models
 

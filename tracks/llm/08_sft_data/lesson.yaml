@@ -1,0 +1,8 @@
+id: llm.08_sft_data
+title: Supervised Fine-Tuning Data
+track: llm
+level: intermediate
+summary: Turn chat examples into masked causal-LM training tensors.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py

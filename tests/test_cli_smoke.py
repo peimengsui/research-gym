@@ -33,6 +33,8 @@ def test_list_shows_available_lessons() -> None:
     assert "KV Cache" in result.stdout
     assert "llm.07_dpo" in result.stdout
     assert "Direct Preference Optimization" in result.stdout
+    assert "llm.08_sft_data" in result.stdout
+    assert "Supervised Fine-Tuning Data" in result.stdout
     assert "wm.01_vae" in result.stdout
     assert "Variational Autoencoder" in result.stdout
     assert "wm.02_latent_dynamics" in result.stdout
