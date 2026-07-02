@@ -20,6 +20,7 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
         "llm.06_kv_cache",
         "llm.07_dpo",
         "llm.08_sft_data",
+        "llm.09_lora",
         "wm.01_vae",
         "wm.02_latent_dynamics",
         "wm.03_mdn_rnn",
@@ -34,11 +35,12 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
     assert lessons[5].title == "KV Cache"
     assert lessons[6].title == "Direct Preference Optimization"
     assert lessons[7].title == "Supervised Fine-Tuning Data"
-    assert lessons[8].title == "Variational Autoencoder"
-    assert lessons[9].title == "Latent Dynamics"
-    assert lessons[10].title == "MDN-RNN"
-    assert lessons[11].title == "World Model Loop"
-    assert lessons[12].title == "CEM Planning"
+    assert lessons[8].title == "Low-Rank Adaptation"
+    assert lessons[9].title == "Variational Autoencoder"
+    assert lessons[10].title == "Latent Dynamics"
+    assert lessons[11].title == "MDN-RNN"
+    assert lessons[12].title == "World Model Loop"
+    assert lessons[13].title == "CEM Planning"
 
 
 def test_get_lesson_returns_requested_lesson() -> None:

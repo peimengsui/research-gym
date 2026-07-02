@@ -225,6 +225,20 @@ research-gym/
         scripts/
           run_demo.py
 
+      09_lora/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        hints.md
+        review.md
+        tests/
+          test_lora.py
+        scripts/
+          run_demo.py
+
     world_models/
       01_vae/
         lesson.yaml

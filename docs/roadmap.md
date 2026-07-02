@@ -16,6 +16,7 @@ and code-level fluency. Timing is directional rather than a release promise.
 - complete KV Cache lesson
 - complete Direct Preference Optimization lesson
 - complete Supervised Fine-Tuning Data lesson
+- complete Low-Rank Adaptation lesson
 - complete Variational Autoencoder lesson
 - complete Latent Dynamics lesson
 - complete MDN-RNN lesson
@@ -26,7 +27,7 @@ and code-level fluency. Timing is directional rather than a release promise.
 
 ### Language models
 
-- LoRA low-rank adaptation
+- weight quantization
 
 ### World models
 
