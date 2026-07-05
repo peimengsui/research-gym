@@ -1,6 +1,6 @@
 # PLANS.md
 
-# ResearchGym MVP Execution Plan: Week 1–2
+# ResearchGym MVP Execution Plan: Stage 1
 
 ## Objective
 
@@ -638,9 +638,9 @@ docs/roadmap.md
 
 Include:
 
-* Week 3–4: tokenizer, causal attention, latent dynamics, MDN-RNN
-* Month 2: tiny GPT, CEM planning, KV cache
-* Month 3+: Dreamer-lite, DPO, VLM mini-lab
+* Stage 2: tokenizer, causal attention, latent dynamics, MDN-RNN
+* Stage 3: tiny GPT, CEM planning, KV cache
+* Stage 4: Dreamer-lite, DPO, VLM mini-lab
 
 ### 6.4 Run full verification
 

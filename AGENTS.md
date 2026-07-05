@@ -43,7 +43,7 @@ Avoid:
 * heavy dependencies
 * magic code generation that bypasses learning
 
-## Week 1–2 MVP goal
+## Stage 1 MVP goal
 
 Build the first usable CLI-first version of ResearchGym.
 

@@ -1,7 +1,7 @@
 # ResearchGym roadmap
 
 The roadmap favors a sequence of small implementations that build conceptual
-and code-level fluency. Timing is directional rather than a release promise.
+and code-level fluency. Ordering is directional rather than a release promise.
 
 ## Current foundation
 
@@ -70,20 +70,30 @@ The diffusion track should start with tiny tensor exercises before moving to
 image-shaped models. It is informed by Peimeng Sui's diffusion self-study notes:
 <https://peimengsui.github.io/2026/01/25/Diffusion-Learning-Summary.html>.
 
-Planned:
+Remaining plan:
+
+Stage 1 — forward/reverse process foundations:
 
 - `diffusion.01_forward_process` — Noise Schedules and the Forward Process
 - `diffusion.02_noise_prediction` — Epsilon Prediction Objective
 - `diffusion.03_ddpm_sampling` — Reverse DDPM Sampling
+
+Stage 2 — image-shaped diffusion:
+
 - `diffusion.04_tiny_unet` — Tiny U-Net Denoiser
 - `diffusion.05_ddim_sampling` — Deterministic DDIM Sampling
 - `diffusion.06_classifier_free_guidance` — Conditional Generation and Guidance
+
+Stage 3 — modern extensions:
+
 - `diffusion.07_latent_diffusion` — Diffusion in a Learned Latent Space
 - `diffusion.08_cross_attention_conditioning` — Prompt-Style Conditioning
 - `diffusion.09_flow_matching` — Flow Matching and ODE Sampling
 - `diffusion.10_consistency_models` — One/Few-Step Consistency Models
 
-## Week 3–4
+## Implementation stages
+
+### Stage 1: continue core tracks
 
 ### Language models
 
@@ -97,7 +107,13 @@ Planned:
 
 - start `diffusion.01_forward_process`
 
-## Month 3+
+### Stage 2: deepen track coverage
+
+- LLM sampling and tiny evaluation harness
+- world-model uncertainty and policy learning in latent space
+- diffusion noise prediction, DDPM sampling, and tiny U-Net denoising
+
+### Stage 3: connect to broader research patterns
 
 - small vision-language model lab
 - tiny diffusion image lab
