@@ -16,6 +16,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 @pytest.mark.parametrize(
     "lesson_id",
     [
+        "diffusion.01_forward_process",
         "llm.01_bigram_lm",
         "llm.02_tokenizer",
         "llm.03_causal_attention",

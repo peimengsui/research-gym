@@ -19,6 +19,8 @@ def test_list_shows_available_lessons() -> None:
     result = runner.invoke(app, ["list"])
 
     assert result.exit_code == 0
+    assert "diffusion.01_forward_process" in result.stdout
+    assert "Noise Schedules and the Forward Process" in result.stdout
     assert "llm.01_bigram_lm" in result.stdout
     assert "Bigram Language Model" in result.stdout
     assert "llm.02_tokenizer" in result.stdout

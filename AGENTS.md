@@ -112,6 +112,21 @@ research-gym/
     report.py
 
   tracks/
+    diffusion/
+      01_forward_process/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        hints.md
+        review.md
+        tests/
+          test_forward_process.py
+        scripts/
+          run_demo.py
+
     llm/
       01_bigram_lm/
         lesson.yaml

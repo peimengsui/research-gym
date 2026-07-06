@@ -22,6 +22,7 @@ and code-level fluency. Ordering is directional rather than a release promise.
 - complete MDN-RNN lesson
 - complete World Model Loop lesson
 - complete CEM Planning lesson
+- complete Noise Schedules and the Forward Process lesson
 
 ## Track roadmaps
 
@@ -70,11 +71,14 @@ The diffusion track should start with tiny tensor exercises before moving to
 image-shaped models. It is informed by Peimeng Sui's diffusion self-study notes:
 <https://peimengsui.github.io/2026/01/25/Diffusion-Learning-Summary.html>.
 
+Completed:
+
+- `diffusion.01_forward_process` — Noise Schedules and the Forward Process
+
 Remaining plan:
 
 Stage 1 — forward/reverse process foundations:
 
-- `diffusion.01_forward_process` — Noise Schedules and the Forward Process
 - `diffusion.02_noise_prediction` — Epsilon Prediction Objective
 - `diffusion.03_ddpm_sampling` — Reverse DDPM Sampling
 
@@ -105,7 +109,7 @@ Stage 3 — modern extensions:
 
 ### Diffusion models
 
-- start `diffusion.01_forward_process`
+- continue with `diffusion.02_noise_prediction`
 
 ### Stage 2: deepen track coverage
 

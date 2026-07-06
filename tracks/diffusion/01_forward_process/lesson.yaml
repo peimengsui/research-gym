@@ -1,0 +1,8 @@
+id: diffusion.01_forward_process
+title: Noise Schedules and the Forward Process
+track: diffusion
+level: fundamental
+summary: Implement the closed-form forward noising process used by DDPMs.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py
