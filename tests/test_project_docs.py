@@ -51,6 +51,7 @@ def test_repository_contains_no_notebooks() -> None:
 def test_mvp_lessons_have_complete_structure() -> None:
     lesson_paths = [
         PROJECT_ROOT / "tracks" / "diffusion" / "01_forward_process",
+        PROJECT_ROOT / "tracks" / "diffusion" / "02_noise_prediction",
         PROJECT_ROOT / "tracks" / "llm" / "01_bigram_lm",
         PROJECT_ROOT / "tracks" / "llm" / "02_tokenizer",
         PROJECT_ROOT / "tracks" / "llm" / "03_causal_attention",

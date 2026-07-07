@@ -127,6 +127,20 @@ research-gym/
         scripts/
           run_demo.py
 
+      02_noise_prediction/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        hints.md
+        review.md
+        tests/
+          test_noise_prediction.py
+        scripts/
+          run_demo.py
+
     llm/
       01_bigram_lm/
         lesson.yaml

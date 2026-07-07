@@ -23,6 +23,7 @@ and code-level fluency. Ordering is directional rather than a release promise.
 - complete World Model Loop lesson
 - complete CEM Planning lesson
 - complete Noise Schedules and the Forward Process lesson
+- complete Epsilon Prediction Objective lesson
 
 ## Track roadmaps
 
@@ -74,12 +75,12 @@ image-shaped models. It is informed by Peimeng Sui's diffusion self-study notes:
 Completed:
 
 - `diffusion.01_forward_process` — Noise Schedules and the Forward Process
+- `diffusion.02_noise_prediction` — Epsilon Prediction Objective
 
 Remaining plan:
 
 Stage 1 — forward/reverse process foundations:
 
-- `diffusion.02_noise_prediction` — Epsilon Prediction Objective
 - `diffusion.03_ddpm_sampling` — Reverse DDPM Sampling
 
 Stage 2 — image-shaped diffusion:
@@ -109,7 +110,7 @@ Stage 3 — modern extensions:
 
 ### Diffusion models
 
-- continue with `diffusion.02_noise_prediction`
+- continue with `diffusion.03_ddpm_sampling`
 
 ### Stage 2: deepen track coverage
 

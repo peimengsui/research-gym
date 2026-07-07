@@ -13,6 +13,7 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
 
     assert [lesson.id for lesson in lessons] == [
         "diffusion.01_forward_process",
+        "diffusion.02_noise_prediction",
         "llm.01_bigram_lm",
         "llm.02_tokenizer",
         "llm.03_causal_attention",
@@ -29,20 +30,21 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
         "wm.05_cem_planning",
     ]
     assert lessons[0].title == "Noise Schedules and the Forward Process"
-    assert lessons[1].title == "Bigram Language Model"
-    assert lessons[2].title == "Tokenizer Fundamentals"
-    assert lessons[3].title == "Causal Self-Attention"
-    assert lessons[4].title == "Transformer Block"
-    assert lessons[5].title == "Tiny GPT"
-    assert lessons[6].title == "KV Cache"
-    assert lessons[7].title == "Direct Preference Optimization"
-    assert lessons[8].title == "Supervised Fine-Tuning Data"
-    assert lessons[9].title == "Low-Rank Adaptation"
-    assert lessons[10].title == "Variational Autoencoder"
-    assert lessons[11].title == "Latent Dynamics"
-    assert lessons[12].title == "MDN-RNN"
-    assert lessons[13].title == "World Model Loop"
-    assert lessons[14].title == "CEM Planning"
+    assert lessons[1].title == "Epsilon Prediction Objective"
+    assert lessons[2].title == "Bigram Language Model"
+    assert lessons[3].title == "Tokenizer Fundamentals"
+    assert lessons[4].title == "Causal Self-Attention"
+    assert lessons[5].title == "Transformer Block"
+    assert lessons[6].title == "Tiny GPT"
+    assert lessons[7].title == "KV Cache"
+    assert lessons[8].title == "Direct Preference Optimization"
+    assert lessons[9].title == "Supervised Fine-Tuning Data"
+    assert lessons[10].title == "Low-Rank Adaptation"
+    assert lessons[11].title == "Variational Autoencoder"
+    assert lessons[12].title == "Latent Dynamics"
+    assert lessons[13].title == "MDN-RNN"
+    assert lessons[14].title == "World Model Loop"
+    assert lessons[15].title == "CEM Planning"
 
 
 def test_get_lesson_returns_requested_lesson() -> None:
