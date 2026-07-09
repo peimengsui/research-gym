@@ -18,6 +18,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
     [
         "diffusion.01_forward_process",
         "diffusion.02_noise_prediction",
+        "diffusion.03_ddpm_sampling",
         "llm.01_bigram_lm",
         "llm.02_tokenizer",
         "llm.03_causal_attention",

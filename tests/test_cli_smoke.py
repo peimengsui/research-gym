@@ -23,6 +23,8 @@ def test_list_shows_available_lessons() -> None:
     assert "Noise Schedules and the Forward Process" in result.stdout
     assert "diffusion.02_noise_prediction" in result.stdout
     assert "Epsilon Prediction Objective" in result.stdout
+    assert "diffusion.03_ddpm_sampling" in result.stdout
+    assert "Reverse DDPM Sampling" in result.stdout
     assert "llm.01_bigram_lm" in result.stdout
     assert "Bigram Language Model" in result.stdout
     assert "llm.02_tokenizer" in result.stdout
