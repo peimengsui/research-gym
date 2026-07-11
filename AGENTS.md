@@ -155,6 +155,20 @@ research-gym/
         scripts/
           run_demo.py
 
+      04_tiny_unet/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        hints.md
+        review.md
+        tests/
+          test_tiny_unet.py
+        scripts/
+          run_demo.py
+
     llm/
       01_bigram_lm/
         lesson.yaml

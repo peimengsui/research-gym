@@ -25,6 +25,7 @@ and code-level fluency. Ordering is directional rather than a release promise.
 - complete Noise Schedules and the Forward Process lesson
 - complete Epsilon Prediction Objective lesson
 - complete Reverse DDPM Sampling lesson
+- complete Tiny U-Net Denoiser lesson
 
 ## Track roadmaps
 
@@ -78,12 +79,12 @@ Completed:
 - `diffusion.01_forward_process` — Noise Schedules and the Forward Process
 - `diffusion.02_noise_prediction` — Epsilon Prediction Objective
 - `diffusion.03_ddpm_sampling` — Reverse DDPM Sampling
+- `diffusion.04_tiny_unet` — Tiny U-Net Denoiser
 
 Remaining plan:
 
 Stage 2 — image-shaped diffusion:
 
-- `diffusion.04_tiny_unet` — Tiny U-Net Denoiser
 - `diffusion.05_ddim_sampling` — Deterministic DDIM Sampling
 - `diffusion.06_classifier_free_guidance` — Conditional Generation and Guidance
 
@@ -108,7 +109,7 @@ Stage 3 — modern extensions:
 
 ### Diffusion models
 
-- continue with `diffusion.04_tiny_unet`
+- continue with `diffusion.05_ddim_sampling`
 
 ### Stage 2: deepen track coverage
 

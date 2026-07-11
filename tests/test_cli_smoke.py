@@ -25,6 +25,8 @@ def test_list_shows_available_lessons() -> None:
     assert "Epsilon Prediction Objective" in result.stdout
     assert "diffusion.03_ddpm_sampling" in result.stdout
     assert "Reverse DDPM Sampling" in result.stdout
+    assert "diffusion.04_tiny_unet" in result.stdout
+    assert "Tiny U-Net Denoiser" in result.stdout
     assert "llm.01_bigram_lm" in result.stdout
     assert "Bigram Language Model" in result.stdout
     assert "llm.02_tokenizer" in result.stdout
