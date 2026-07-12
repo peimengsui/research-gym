@@ -1,0 +1,8 @@
+id: diffusion.05_ddim_sampling
+title: Deterministic DDIM Sampling
+track: diffusion
+level: fundamental
+summary: Reuse a noise predictor for deterministic and fewer-step DDIM sampling.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py

@@ -54,6 +54,7 @@ def test_mvp_lessons_have_complete_structure() -> None:
         PROJECT_ROOT / "tracks" / "diffusion" / "02_noise_prediction",
         PROJECT_ROOT / "tracks" / "diffusion" / "03_ddpm_sampling",
         PROJECT_ROOT / "tracks" / "diffusion" / "04_tiny_unet",
+        PROJECT_ROOT / "tracks" / "diffusion" / "05_ddim_sampling",
         PROJECT_ROOT / "tracks" / "llm" / "01_bigram_lm",
         PROJECT_ROOT / "tracks" / "llm" / "02_tokenizer",
         PROJECT_ROOT / "tracks" / "llm" / "03_causal_attention",

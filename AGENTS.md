@@ -169,6 +169,20 @@ research-gym/
         scripts/
           run_demo.py
 
+      05_ddim_sampling/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        hints.md
+        review.md
+        tests/
+          test_ddim_sampling.py
+        scripts/
+          run_demo.py
+
     llm/
       01_bigram_lm/
         lesson.yaml

@@ -16,6 +16,7 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
         "diffusion.02_noise_prediction",
         "diffusion.03_ddpm_sampling",
         "diffusion.04_tiny_unet",
+        "diffusion.05_ddim_sampling",
         "llm.01_bigram_lm",
         "llm.02_tokenizer",
         "llm.03_causal_attention",
@@ -35,20 +36,21 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
     assert lessons[1].title == "Epsilon Prediction Objective"
     assert lessons[2].title == "Reverse DDPM Sampling"
     assert lessons[3].title == "Tiny U-Net Denoiser"
-    assert lessons[4].title == "Bigram Language Model"
-    assert lessons[5].title == "Tokenizer Fundamentals"
-    assert lessons[6].title == "Causal Self-Attention"
-    assert lessons[7].title == "Transformer Block"
-    assert lessons[8].title == "Tiny GPT"
-    assert lessons[9].title == "KV Cache"
-    assert lessons[10].title == "Direct Preference Optimization"
-    assert lessons[11].title == "Supervised Fine-Tuning Data"
-    assert lessons[12].title == "Low-Rank Adaptation"
-    assert lessons[13].title == "Variational Autoencoder"
-    assert lessons[14].title == "Latent Dynamics"
-    assert lessons[15].title == "MDN-RNN"
-    assert lessons[16].title == "World Model Loop"
-    assert lessons[17].title == "CEM Planning"
+    assert lessons[4].title == "Deterministic DDIM Sampling"
+    assert lessons[5].title == "Bigram Language Model"
+    assert lessons[6].title == "Tokenizer Fundamentals"
+    assert lessons[7].title == "Causal Self-Attention"
+    assert lessons[8].title == "Transformer Block"
+    assert lessons[9].title == "Tiny GPT"
+    assert lessons[10].title == "KV Cache"
+    assert lessons[11].title == "Direct Preference Optimization"
+    assert lessons[12].title == "Supervised Fine-Tuning Data"
+    assert lessons[13].title == "Low-Rank Adaptation"
+    assert lessons[14].title == "Variational Autoencoder"
+    assert lessons[15].title == "Latent Dynamics"
+    assert lessons[16].title == "MDN-RNN"
+    assert lessons[17].title == "World Model Loop"
+    assert lessons[18].title == "CEM Planning"
 
 
 def test_get_lesson_returns_requested_lesson() -> None:
