@@ -5,7 +5,6 @@ from typing import Annotated
 
 import typer
 from rich.console import Console
-from rich.table import Table
 
 from rgym.registry import LessonRegistryError, discover_lessons, get_lesson
 from rgym.report import generate_report
@@ -40,14 +39,10 @@ def list_lessons() -> None:
         console.print("No lessons found.")
         return
 
-    table = Table(show_header=True, header_style="bold")
-    table.add_column("Lesson ID", no_wrap=True)
-    table.add_column("Title", no_wrap=True)
-    table.add_column("Track")
-    table.add_column("Level")
+    console.print("[bold]Available lessons[/bold]")
     for lesson in lessons:
-        table.add_row(lesson.id, lesson.title, lesson.track, lesson.level)
-    console.print(table)
+        console.print(f"[cyan]{lesson.id}[/cyan]")
+        console.print(f"  {lesson.title} · {lesson.track} · {lesson.level}")
 
 
 @app.command("inspect")

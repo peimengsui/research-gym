@@ -183,6 +183,20 @@ research-gym/
         scripts/
           run_demo.py
 
+      06_classifier_free_guidance/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        hints.md
+        review.md
+        tests/
+          test_classifier_free_guidance.py
+        scripts/
+          run_demo.py
+
     llm/
       01_bigram_lm/
         lesson.yaml

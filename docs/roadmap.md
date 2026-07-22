@@ -82,12 +82,9 @@ Completed:
 - `diffusion.03_ddpm_sampling` — Reverse DDPM Sampling
 - `diffusion.04_tiny_unet` — Tiny U-Net Denoiser
 - `diffusion.05_ddim_sampling` — Deterministic DDIM Sampling
+- `diffusion.06_classifier_free_guidance` — Conditional Generation and Guidance
 
 Remaining plan:
-
-Stage 2 — image-shaped diffusion:
-
-- `diffusion.06_classifier_free_guidance` — Conditional Generation and Guidance
 
 Stage 3 — modern extensions:
 
@@ -110,7 +107,7 @@ Stage 3 — modern extensions:
 
 ### Diffusion models
 
-- continue with `diffusion.06_classifier_free_guidance`
+- continue with `diffusion.07_latent_diffusion`
 
 ### Stage 2: deepen track coverage
 

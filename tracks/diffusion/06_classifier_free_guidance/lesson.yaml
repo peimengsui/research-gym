@@ -1,0 +1,8 @@
+id: diffusion.06_classifier_free_guidance
+title: Classifier-Free Guidance
+track: diffusion
+level: intermediate
+summary: Train conditional and unconditional noise prediction together, then guide DDIM sampling.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py

@@ -21,6 +21,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
         "diffusion.03_ddpm_sampling",
         "diffusion.04_tiny_unet",
         "diffusion.05_ddim_sampling",
+        "diffusion.06_classifier_free_guidance",
         "llm.01_bigram_lm",
         "llm.02_tokenizer",
         "llm.03_causal_attention",
