@@ -83,12 +83,12 @@ Completed:
 - `diffusion.04_tiny_unet` — Tiny U-Net Denoiser
 - `diffusion.05_ddim_sampling` — Deterministic DDIM Sampling
 - `diffusion.06_classifier_free_guidance` — Conditional Generation and Guidance
+- `diffusion.07_latent_diffusion` — Diffusion in a Learned Latent Space
 
 Remaining plan:
 
 Stage 3 — modern extensions:
 
-- `diffusion.07_latent_diffusion` — Diffusion in a Learned Latent Space
 - `diffusion.08_cross_attention_conditioning` — Prompt-Style Conditioning
 - `diffusion.09_flow_matching` — Flow Matching and ODE Sampling
 - `diffusion.10_consistency_models` — One/Few-Step Consistency Models
@@ -107,7 +107,7 @@ Stage 3 — modern extensions:
 
 ### Diffusion models
 
-- continue with `diffusion.07_latent_diffusion`
+- continue with `diffusion.08_cross_attention_conditioning`
 
 ### Stage 2: deepen track coverage
 

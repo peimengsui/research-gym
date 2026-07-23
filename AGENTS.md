@@ -197,6 +197,20 @@ research-gym/
         scripts/
           run_demo.py
 
+      07_latent_diffusion/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        hints.md
+        review.md
+        tests/
+          test_latent_diffusion.py
+        scripts/
+          run_demo.py
+
     llm/
       01_bigram_lm/
         lesson.yaml

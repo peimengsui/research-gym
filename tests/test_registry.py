@@ -18,6 +18,7 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
         "diffusion.04_tiny_unet",
         "diffusion.05_ddim_sampling",
         "diffusion.06_classifier_free_guidance",
+        "diffusion.07_latent_diffusion",
         "llm.01_bigram_lm",
         "llm.02_tokenizer",
         "llm.03_causal_attention",
@@ -39,20 +40,21 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
     assert lessons[3].title == "Tiny U-Net Denoiser"
     assert lessons[4].title == "Deterministic DDIM Sampling"
     assert lessons[5].title == "Classifier-Free Guidance"
-    assert lessons[6].title == "Bigram Language Model"
-    assert lessons[7].title == "Tokenizer Fundamentals"
-    assert lessons[8].title == "Causal Self-Attention"
-    assert lessons[9].title == "Transformer Block"
-    assert lessons[10].title == "Tiny GPT"
-    assert lessons[11].title == "KV Cache"
-    assert lessons[12].title == "Direct Preference Optimization"
-    assert lessons[13].title == "Supervised Fine-Tuning Data"
-    assert lessons[14].title == "Low-Rank Adaptation"
-    assert lessons[15].title == "Variational Autoencoder"
-    assert lessons[16].title == "Latent Dynamics"
-    assert lessons[17].title == "MDN-RNN"
-    assert lessons[18].title == "World Model Loop"
-    assert lessons[19].title == "CEM Planning"
+    assert lessons[6].title == "Latent Diffusion"
+    assert lessons[7].title == "Bigram Language Model"
+    assert lessons[8].title == "Tokenizer Fundamentals"
+    assert lessons[9].title == "Causal Self-Attention"
+    assert lessons[10].title == "Transformer Block"
+    assert lessons[11].title == "Tiny GPT"
+    assert lessons[12].title == "KV Cache"
+    assert lessons[13].title == "Direct Preference Optimization"
+    assert lessons[14].title == "Supervised Fine-Tuning Data"
+    assert lessons[15].title == "Low-Rank Adaptation"
+    assert lessons[16].title == "Variational Autoencoder"
+    assert lessons[17].title == "Latent Dynamics"
+    assert lessons[18].title == "MDN-RNN"
+    assert lessons[19].title == "World Model Loop"
+    assert lessons[20].title == "CEM Planning"
 
 
 def test_get_lesson_returns_requested_lesson() -> None:

@@ -1,0 +1,8 @@
+id: diffusion.07_latent_diffusion
+title: Latent Diffusion
+track: diffusion
+level: intermediate
+summary: Compress images, run diffusion in scaled latent space, and decode the generated latents.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py
