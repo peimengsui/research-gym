@@ -6,9 +6,12 @@ blocks, and deterministic DDIM update are already implemented.
 ## 1. Add class conditioning
 
 `ConditionalTinyUNet` reserves indices `0..num_classes-1` for real classes and
-uses `num_classes` as `null_class`. Embed timesteps and class labels into
-vectors of shape `(batch, condition_dim)`, then add them before passing the
-combined vector through each conditioned convolution block.
+uses `num_classes` as `null_class`. Create an `nn.Embedding` with one row for
+each real class plus one extra row for that null condition.
+
+Embed timesteps and class labels into vectors of shape
+`(batch, condition_dim)`, then add them before passing the combined vector
+through each conditioned convolution block.
 
 Finish the same downsample, bottleneck, skip-connection, and upsample path used
 by the previous Tiny U-Net lesson.

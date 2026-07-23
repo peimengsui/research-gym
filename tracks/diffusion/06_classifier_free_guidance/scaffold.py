@@ -152,8 +152,9 @@ class ConditionalTinyUNet(nn.Module):
             nn.SiLU(),
             nn.Linear(condition_dim * 2, condition_dim),
         )
-        # The extra row at index num_classes represents "no condition."
-        self.class_embedding = nn.Embedding(num_classes + 1, condition_dim)
+        # TODO 1: Create an embedding table for every real class plus one
+        # extra row at null_class that represents "no condition."
+        self.class_embedding: nn.Embedding
         self.input_conv = nn.Conv2d(
             in_channels, base_channels, kernel_size=3, padding=1
         )
@@ -187,7 +188,7 @@ class ConditionalTinyUNet(nn.Module):
         if class_labels.shape != (x_t.shape[0],):
             raise ValueError("class_labels must have shape (batch,)")
 
-        # TODO 1: Embed timesteps and class labels, then add the two vectors.
+        # TODO 2: Embed timesteps and class labels, then add the two vectors.
         # The combined condition must have shape (batch, condition_dim).
         raise NotImplementedError
 
@@ -204,7 +205,7 @@ def drop_class_conditions(
         raise ValueError("class_labels must have shape (batch,)")
     if not 0.0 <= drop_probability <= 1.0:
         raise ValueError("drop_probability must be between 0 and 1")
-    # TODO 2: Randomly replace labels with null_class. The Boolean drop_mask
+    # TODO 3: Randomly replace labels with null_class. The Boolean drop_mask
     # records which examples became unconditional.
     raise NotImplementedError
 
@@ -219,7 +220,7 @@ def conditional_noise_prediction_loss(
 ) -> torch.Tensor:
     """Compute scalar epsilon-prediction MSE with condition dropout."""
 
-    # TODO 3: Sample t and epsilon, build x_t, drop some class conditions,
+    # TODO 4: Sample t and epsilon, build x_t, drop some class conditions,
     # predict epsilon, and return mean-squared error against the sampled noise.
     raise NotImplementedError
 
@@ -235,7 +236,7 @@ def classifier_free_guidance(
         raise ValueError("noise predictions must have the same shape")
     if guidance_scale < 0:
         raise ValueError("guidance_scale must be non-negative")
-    # TODO 4: Start at epsilon_uncond and move guidance_scale times toward
+    # TODO 5: Start at epsilon_uncond and move guidance_scale times toward
     # epsilon_cond. Scales above 1 extrapolate beyond the conditional result.
     raise NotImplementedError
 
@@ -251,7 +252,7 @@ def predict_noise_with_cfg(
 
     if class_labels.shape != (x_t.shape[0],):
         raise ValueError("class_labels must have shape (batch,)")
-    # TODO 5: Predict once with model.null_class, once with class_labels, and
+    # TODO 6: Predict once with model.null_class, once with class_labels, and
     # combine them with classifier_free_guidance.
     raise NotImplementedError
 
