@@ -1,0 +1,8 @@
+id: diffusion.08_cross_attention_conditioning
+title: Cross-Attention Conditioning
+track: diffusion
+level: intermediate
+summary: Condition latent diffusion on token sequences through multi-head cross-attention.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py

@@ -57,6 +57,7 @@ def test_mvp_lessons_have_complete_structure() -> None:
         PROJECT_ROOT / "tracks" / "diffusion" / "05_ddim_sampling",
         PROJECT_ROOT / "tracks" / "diffusion" / "06_classifier_free_guidance",
         PROJECT_ROOT / "tracks" / "diffusion" / "07_latent_diffusion",
+        PROJECT_ROOT / "tracks" / "diffusion" / "08_cross_attention_conditioning",
         PROJECT_ROOT / "tracks" / "llm" / "01_bigram_lm",
         PROJECT_ROOT / "tracks" / "llm" / "02_tokenizer",
         PROJECT_ROOT / "tracks" / "llm" / "03_causal_attention",
