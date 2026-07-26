@@ -24,6 +24,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
         "diffusion.06_classifier_free_guidance",
         "diffusion.07_latent_diffusion",
         "diffusion.08_cross_attention_conditioning",
+        "diffusion.09_flow_matching",
         "llm.01_bigram_lm",
         "llm.02_tokenizer",
         "llm.03_causal_attention",

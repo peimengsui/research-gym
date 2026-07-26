@@ -35,6 +35,8 @@ def test_list_shows_available_lessons() -> None:
     assert "Latent Diffusion" in result.stdout
     assert "diffusion.08_cross_attention_conditioning" in result.stdout
     assert "Cross-Attention Conditioning" in result.stdout
+    assert "diffusion.09_flow_matching" in result.stdout
+    assert "Flow Matching and ODE Sampling" in result.stdout
     assert "llm.01_bigram_lm" in result.stdout
     assert "Bigram Language Model" in result.stdout
     assert "llm.02_tokenizer" in result.stdout

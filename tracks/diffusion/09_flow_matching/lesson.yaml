@@ -1,0 +1,8 @@
+id: diffusion.09_flow_matching
+title: Flow Matching and ODE Sampling
+track: diffusion
+level: intermediate
+summary: Learn a continuous velocity field from noise to data and sample it with ODE solvers.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py

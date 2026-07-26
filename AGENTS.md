@@ -225,6 +225,20 @@ research-gym/
         scripts/
           run_demo.py
 
+      09_flow_matching/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        hints.md
+        review.md
+        tests/
+          test_flow_matching.py
+        scripts/
+          run_demo.py
+
     llm/
       01_bigram_lm/
         lesson.yaml
