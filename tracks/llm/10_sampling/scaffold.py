@@ -205,4 +205,8 @@ def generate_tokens(
     # 2. Select from the final position's logits with sample_next_token.
     # 3. Append the token while preserving the full generated history.
     # 4. If eos_token_id is set, stop once every batch item is finished.
+    # Keep the batch rectangular: finished rows may still run through the model,
+    # but replace their sampled tokens with EOS. This intentionally trades some
+    # redundant compute for simpler code. As an extension, consider tracking and
+    # decoding only active rows, then explain the extra bookkeeping that requires.
     raise NotImplementedError

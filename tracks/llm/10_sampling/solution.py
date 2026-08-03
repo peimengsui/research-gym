@@ -221,6 +221,11 @@ def generate_tokens(
         raise ValueError("eos_token_id must be non-negative")
 
     generated = prompt
+    # This simple loop keeps a rectangular batch. A finished row therefore still
+    # takes part in later model forwards and sampling; its sampled token is then
+    # replaced with EOS below. That wastes some compute, but keeps the lesson's
+    # control flow easy to follow. Production decoders often compact active rows
+    # or use continuous batching instead.
     finished = torch.zeros(prompt.shape[0], dtype=torch.bool, device=prompt.device)
     for _ in range(max_new_tokens):
         context = generated[:, -model.block_size :]
@@ -234,6 +239,7 @@ def generate_tokens(
             generator,
         )
         if eos_token_id is not None:
+            # Keep finished rows rectangular by appending EOS until all rows finish.
             next_token = torch.where(
                 finished[:, None],
                 torch.full_like(next_token, eos_token_id),
