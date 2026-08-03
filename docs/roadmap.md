@@ -46,12 +46,33 @@ Completed:
 - `llm.07_dpo` — Direct Preference Optimization
 - `llm.08_sft_data` — Supervised Fine-Tuning Data
 - `llm.09_lora` — Low-Rank Adaptation
+- `llm.10_sampling` — Language Model Sampling
 
 Planned:
 
-- `llm.10_quantization` — Weight Quantization
-- `llm.11_sampling` — Temperature, Top-k, and Nucleus Sampling
-- `llm.12_eval_harness` — Tiny LLM Evaluation Harness
+The next sequence prioritizes native vision support. Image patches become model
+tokens and eventually share Transformer layers with text tokens, rather than
+depending on an opaque pretrained vision encoder. Lessons should use synthetic
+Torch images so tests remain self-contained and CPU-friendly.
+
+```text
+image patch tokens
+→ visual attention
+→ unified image-text sequence
+→ multimodal attention mask
+→ tiny native VLM
+→ multimodal training, generation, and evaluation
+```
+
+- `llm.11_vision_patch_embeddings` — Images as Patch Tokens
+- `llm.12_vision_attention` — Visual Transformer Blocks
+- `llm.13_multimodal_sequence` — Unified Image and Text Tokens
+- `llm.14_multimodal_attention_mask` — Visual Prefix and Causal Text
+- `llm.15_tiny_native_vlm` — Tiny Native Vision-Language Model
+- `llm.16_multimodal_sft_data` — Image-Text Conversations
+- `llm.17_multimodal_generation` — Image Prefill, KV Cache, and Decoding
+- `llm.18_multimodal_eval` — Tiny Vision-Language Evaluation Harness
+- `llm.19_quantization` — Weight Quantization
 
 ### World models
 
@@ -99,7 +120,7 @@ Stage 3 — modern extensions:
 
 ### Language models
 
-- weight quantization
+- begin native vision with `llm.11_vision_patch_embeddings`
 
 ### World models
 
@@ -111,13 +132,14 @@ Stage 3 — modern extensions:
 
 ### Stage 2: deepen track coverage
 
-- LLM sampling and tiny evaluation harness
+- native image patch tokens, visual attention, and unified image-text sequences
 - world-model uncertainty and policy learning in latent space
 - diffusion noise prediction, DDPM sampling, and tiny U-Net denoising
 
 ### Stage 3: connect to broader research patterns
 
 - small vision-language model lab
+- multimodal training data, generation, and evaluation
 - tiny diffusion image lab
 - lesson authoring validation and contribution templates
 - richer reports that summarize tests, demos, and learner reflection

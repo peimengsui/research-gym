@@ -1,0 +1,8 @@
+id: llm.10_sampling
+title: Language Model Sampling
+track: llm
+level: intermediate
+summary: Turn next-token logits into controlled generation with temperature, top-k, and nucleus sampling.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py
