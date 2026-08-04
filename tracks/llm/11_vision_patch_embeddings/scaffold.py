@@ -89,8 +89,9 @@ class VisionPatchEmbedding(nn.Module):
         self.num_patches = self.grid_height * self.grid_width
         self.patch_dim = in_channels * patch_size * patch_size
 
-        # TODO 3: Create one Linear projection from patch_dim to embed_dim and
-        # one learned Embedding table with a row for every patch position.
+        # TODO 3: Create `self.projection`, a Linear layer from patch_dim to
+        # embed_dim, and `self.position_embedding`, a learned Embedding table
+        # with one row per patch position. Tests use these attribute names.
         raise NotImplementedError
 
     def forward(self, images: torch.Tensor) -> torch.Tensor:
@@ -103,6 +104,7 @@ class VisionPatchEmbedding(nn.Module):
                 f"(batch, {self.in_channels}, {self.image_height}, {self.image_width})"
             )
 
-        # TODO 4: Patchify the images, project each patch independently, and add
-        # learned row-major positions 0..num_patches-1. Return (batch, patches, D).
+        # TODO 4: Patchify the images, apply self.projection to every patch, and
+        # add self.position_embedding for row-major positions 0..num_patches-1.
+        # Return (batch, patches, embed_dim).
         raise NotImplementedError
