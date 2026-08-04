@@ -17,6 +17,8 @@ and code-level fluency. Ordering is directional rather than a release promise.
 - complete Direct Preference Optimization lesson
 - complete Supervised Fine-Tuning Data lesson
 - complete Low-Rank Adaptation lesson
+- complete Language Model Sampling lesson
+- complete Images as Patch Tokens lesson
 - complete Variational Autoencoder lesson
 - complete Latent Dynamics lesson
 - complete MDN-RNN lesson
@@ -47,6 +49,7 @@ Completed:
 - `llm.08_sft_data` — Supervised Fine-Tuning Data
 - `llm.09_lora` — Low-Rank Adaptation
 - `llm.10_sampling` — Language Model Sampling
+- `llm.11_vision_patch_embeddings` — Images as Patch Tokens
 
 Planned:
 
@@ -64,7 +67,6 @@ image patch tokens
 → multimodal training, generation, and evaluation
 ```
 
-- `llm.11_vision_patch_embeddings` — Images as Patch Tokens
 - `llm.12_vision_attention` — Visual Transformer Blocks
 - `llm.13_multimodal_sequence` — Unified Image and Text Tokens
 - `llm.14_multimodal_attention_mask` — Visual Prefix and Causal Text
@@ -120,7 +122,7 @@ Stage 3 — modern extensions:
 
 ### Language models
 
-- begin native vision with `llm.11_vision_patch_embeddings`
+- continue native vision with `llm.12_vision_attention`
 
 ### World models
 

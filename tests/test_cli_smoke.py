@@ -57,6 +57,8 @@ def test_list_shows_available_lessons() -> None:
     assert "Low-Rank Adaptation" in result.stdout
     assert "llm.10_sampling" in result.stdout
     assert "Language Model Sampling" in result.stdout
+    assert "llm.11_vision_patch_embeddings" in result.stdout
+    assert "Images as Patch Tokens" in result.stdout
     assert "wm.01_vae" in result.stdout
     assert "Variational Autoencoder" in result.stdout
     assert "wm.02_latent_dynamics" in result.stdout

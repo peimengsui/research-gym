@@ -1,0 +1,8 @@
+id: llm.11_vision_patch_embeddings
+title: Images as Patch Tokens
+track: llm
+level: intermediate
+summary: Turn image patches into positioned token embeddings for a native vision Transformer.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py

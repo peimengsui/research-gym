@@ -69,6 +69,7 @@ def test_mvp_lessons_have_complete_structure() -> None:
         PROJECT_ROOT / "tracks" / "llm" / "08_sft_data",
         PROJECT_ROOT / "tracks" / "llm" / "09_lora",
         PROJECT_ROOT / "tracks" / "llm" / "10_sampling",
+        PROJECT_ROOT / "tracks" / "llm" / "11_vision_patch_embeddings",
         PROJECT_ROOT / "tracks" / "world_models" / "01_vae",
         PROJECT_ROOT / "tracks" / "world_models" / "02_latent_dynamics",
         PROJECT_ROOT / "tracks" / "world_models" / "03_mdn_rnn",

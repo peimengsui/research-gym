@@ -380,6 +380,20 @@ research-gym/
         scripts/
           run_demo.py
 
+      11_vision_patch_embeddings/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        hints.md
+        review.md
+        tests/
+          test_vision_patch_embeddings.py
+        scripts/
+          run_demo.py
+
     world_models/
       01_vae/
         lesson.yaml
