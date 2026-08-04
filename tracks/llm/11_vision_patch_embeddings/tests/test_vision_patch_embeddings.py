@@ -43,13 +43,7 @@ def test_unpatchify_exactly_inverts_patchify() -> None:
     images = torch.randn(3, 2, 6, 8)
     patches = patchify(images, patch_size=2)
 
-    reconstructed = unpatchify(
-        patches,
-        image_height=6,
-        image_width=8,
-        channels=2,
-        patch_size=2,
-    )
+    reconstructed = unpatchify(patches, 6, 8, 2, 2)
 
     assert torch.equal(reconstructed, images)
 

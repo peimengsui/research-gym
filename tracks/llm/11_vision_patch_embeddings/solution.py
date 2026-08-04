@@ -29,7 +29,6 @@ def patchify(images: torch.Tensor, patch_size: int) -> torch.Tensor:
 
 def unpatchify(
     patches: torch.Tensor,
-    *,
     image_height: int,
     image_width: int,
     channels: int,
@@ -44,12 +43,12 @@ def unpatchify(
     if image_height % patch_size != 0 or image_width % patch_size != 0:
         raise ValueError("image height and width must be divisible by patch_size")
 
-    batch = patches.shape[0]
+    batch, num_patches, patch_dim = patches.shape
     grid_height = image_height // patch_size
     grid_width = image_width // patch_size
     expected_patches = grid_height * grid_width
     expected_patch_dim = channels * patch_size * patch_size
-    if patches.shape[1:] != (expected_patches, expected_patch_dim):
+    if (num_patches, patch_dim) != (expected_patches, expected_patch_dim):
         raise ValueError(
             "patch shape does not match the requested image dimensions and channels"
         )
