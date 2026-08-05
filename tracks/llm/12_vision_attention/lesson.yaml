@@ -1,0 +1,8 @@
+id: llm.12_vision_attention
+title: Visual Transformer Blocks
+track: llm
+level: intermediate
+summary: Contextualize image patch tokens with bidirectional multi-head self-attention.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py

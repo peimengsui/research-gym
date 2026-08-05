@@ -32,6 +32,7 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
         "llm.09_lora",
         "llm.10_sampling",
         "llm.11_vision_patch_embeddings",
+        "llm.12_vision_attention",
         "wm.01_vae",
         "wm.02_latent_dynamics",
         "wm.03_mdn_rnn",
@@ -58,11 +59,12 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
     assert lessons[17].title == "Low-Rank Adaptation"
     assert lessons[18].title == "Language Model Sampling"
     assert lessons[19].title == "Images as Patch Tokens"
-    assert lessons[20].title == "Variational Autoencoder"
-    assert lessons[21].title == "Latent Dynamics"
-    assert lessons[22].title == "MDN-RNN"
-    assert lessons[23].title == "World Model Loop"
-    assert lessons[24].title == "CEM Planning"
+    assert lessons[20].title == "Visual Transformer Blocks"
+    assert lessons[21].title == "Variational Autoencoder"
+    assert lessons[22].title == "Latent Dynamics"
+    assert lessons[23].title == "MDN-RNN"
+    assert lessons[24].title == "World Model Loop"
+    assert lessons[25].title == "CEM Planning"
 
 
 def test_get_lesson_returns_requested_lesson() -> None:

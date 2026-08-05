@@ -394,6 +394,20 @@ research-gym/
         scripts/
           run_demo.py
 
+      12_vision_attention/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        hints.md
+        review.md
+        tests/
+          test_vision_attention.py
+        scripts/
+          run_demo.py
+
     world_models/
       01_vae/
         lesson.yaml
