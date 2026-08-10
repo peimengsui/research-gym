@@ -20,6 +20,7 @@ and code-level fluency. Ordering is directional rather than a release promise.
 - complete Language Model Sampling lesson
 - complete Images as Patch Tokens lesson
 - complete Visual Transformer Blocks lesson
+- complete Unified Image and Text Tokens lesson
 - complete Variational Autoencoder lesson
 - complete Latent Dynamics lesson
 - complete MDN-RNN lesson
@@ -52,6 +53,7 @@ Completed:
 - `llm.10_sampling` — Language Model Sampling
 - `llm.11_vision_patch_embeddings` — Images as Patch Tokens
 - `llm.12_vision_attention` — Visual Transformer Blocks
+- `llm.13_multimodal_sequence` — Unified Image and Text Tokens
 
 Planned:
 
@@ -69,7 +71,6 @@ image patch tokens
 → multimodal training, generation, and evaluation
 ```
 
-- `llm.13_multimodal_sequence` — Unified Image and Text Tokens
 - `llm.14_multimodal_attention_mask` — Visual Prefix and Causal Text
 - `llm.15_tiny_native_vlm` — Tiny Native Vision-Language Model
 - `llm.16_multimodal_sft_data` — Image-Text Conversations
@@ -123,7 +124,7 @@ Stage 3 — modern extensions:
 
 ### Language models
 
-- continue native vision with `llm.13_multimodal_sequence`
+- continue native vision with `llm.14_multimodal_attention_mask`
 
 ### World models
 

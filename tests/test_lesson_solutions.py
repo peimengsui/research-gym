@@ -37,6 +37,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
         "llm.10_sampling",
         "llm.11_vision_patch_embeddings",
         "llm.12_vision_attention",
+        "llm.13_multimodal_sequence",
         "wm.01_vae",
         "wm.02_latent_dynamics",
         "wm.03_mdn_rnn",

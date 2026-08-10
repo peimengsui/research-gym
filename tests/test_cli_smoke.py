@@ -61,6 +61,8 @@ def test_list_shows_available_lessons() -> None:
     assert "Images as Patch Tokens" in result.stdout
     assert "llm.12_vision_attention" in result.stdout
     assert "Visual Transformer Blocks" in result.stdout
+    assert "llm.13_multimodal_sequence" in result.stdout
+    assert "Unified Image and Text Tokens" in result.stdout
     assert "wm.01_vae" in result.stdout
     assert "Variational Autoencoder" in result.stdout
     assert "wm.02_latent_dynamics" in result.stdout

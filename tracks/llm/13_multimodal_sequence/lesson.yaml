@@ -1,0 +1,8 @@
+id: llm.13_multimodal_sequence
+title: Unified Image and Text Tokens
+track: llm
+level: intermediate
+summary: Assemble visual patches and padded text into one typed, positioned token sequence.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py
