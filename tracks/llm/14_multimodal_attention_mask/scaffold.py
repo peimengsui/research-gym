@@ -5,7 +5,7 @@ turns that metadata into a 2D attention allow-matrix.
 """
 
 import torch
-import torch.nn.functional as F
+import torch.nn.functional as F  # noqa: F401 - used when TODO 5 is implemented
 
 
 def prefix_length(visual_token_count: int) -> int:
@@ -51,6 +51,11 @@ def apply_padding_mask(
 ) -> torch.Tensor:
     """Combine a shared (seq, seq) pattern with per-example validity.
 
+    Batch assumption: every row uses the same sequence layout and length. In
+    this lesson, fixed-size images produce the same number of visual tokens and
+    text is padded to a common length. That lets one base_mask broadcast across
+    the batch while validity records which padded positions are real.
+
     Expected output shape: (batch, seq, seq)
     """
 
@@ -62,8 +67,11 @@ def apply_padding_mask(
         raise ValueError("validity must be a 2D boolean tensor")
     if validity.shape[1] != base_mask.shape[0]:
         raise ValueError("validity sequence length must match base_mask")
-    # TODO 3: Broadcast validity over query and key axes, then AND with
-    # base_mask. Invalid keys and invalid queries should become False.
+    # TODO 3: base_mask is shared because every example has the same visual
+    # prefix boundary and padded total length. Broadcast validity over query and
+    # key axes, then AND with base_mask. Invalid keys and invalid queries should
+    # become False. Variable compact visual-token lengths would instead require
+    # per-example base patterns, or padding images into one fixed visual layout.
     raise NotImplementedError
 
 

@@ -37,6 +37,30 @@ key_valid:   (batch, 1, seq)
 
 AND both with `base_mask.unsqueeze(0)` to get `(batch, seq, seq)`.
 
+Why can the batch share one `base_mask`? This lesson assumes every example has
+the same sequence layout:
+
+```text
+same fixed-size image
+-> same number of visual patch tokens
+-> separator at the same index
+
+different text lengths
+-> padded to the same text tensor length
+-> same total sequence length
+```
+
+The structural visual-prefix/causal-text pattern is therefore identical for
+every row. Only `validity` varies by example, usually because each row has a
+different amount of real text before padding.
+
+This is not automatically valid for compact variable-resolution image tokens.
+If two examples have different visual-token counts, their separator and text
+boundaries would occur at different indices, so they cannot broadcast the same
+base pattern. A system must either pad images into a shared visual-token layout
+and mark visual padding invalid, or construct a separate base mask for each
+example.
+
 ## 4. End-to-end helper
 
 Call `visual_prefix_causal_mask` with `validity.shape[1]`, then
