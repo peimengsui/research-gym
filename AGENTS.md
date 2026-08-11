@@ -423,6 +423,20 @@ research-gym/
         scripts/
           run_demo.py
 
+      14_multimodal_attention_mask/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        hints.md
+        review.md
+        tests/
+          test_multimodal_attention_mask.py
+        scripts/
+          run_demo.py
+
     world_models/
       01_vae/
         lesson.yaml

@@ -21,6 +21,7 @@ and code-level fluency. Ordering is directional rather than a release promise.
 - complete Images as Patch Tokens lesson
 - complete Visual Transformer Blocks lesson
 - complete Unified Image and Text Tokens lesson
+- complete Visual Prefix and Causal Text lesson
 - complete Variational Autoencoder lesson
 - complete Latent Dynamics lesson
 - complete MDN-RNN lesson
@@ -54,10 +55,11 @@ Completed:
 - `llm.11_vision_patch_embeddings` — Images as Patch Tokens
 - `llm.12_vision_attention` — Visual Transformer Blocks
 - `llm.13_multimodal_sequence` — Unified Image and Text Tokens
+- `llm.14_multimodal_attention_mask` — Visual Prefix and Causal Text
 
 Planned:
 
-The next sequence prioritizes native vision support. Image patches become model
+The next sequence continues native vision support. Image patches become model
 tokens and eventually share Transformer layers with text tokens, rather than
 depending on an opaque pretrained vision encoder. Lessons should use synthetic
 Torch images so tests remain self-contained and CPU-friendly.
@@ -71,7 +73,6 @@ image patch tokens
 → multimodal training, generation, and evaluation
 ```
 
-- `llm.14_multimodal_attention_mask` — Visual Prefix and Causal Text
 - `llm.15_tiny_native_vlm` — Tiny Native Vision-Language Model
 - `llm.16_multimodal_sft_data` — Image-Text Conversations
 - `llm.17_multimodal_generation` — Image Prefill, KV Cache, and Decoding
@@ -124,7 +125,7 @@ Stage 3 — modern extensions:
 
 ### Language models
 
-- continue native vision with `llm.14_multimodal_attention_mask`
+- continue native vision with `llm.15_tiny_native_vlm`
 
 ### World models
 

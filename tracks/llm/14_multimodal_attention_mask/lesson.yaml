@@ -1,0 +1,8 @@
+id: llm.14_multimodal_attention_mask
+title: Visual Prefix and Causal Text
+track: llm
+level: intermediate
+summary: Turn a 1D validity mask into a 2D attention matrix with bidirectional visual prefix and causal text.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py
