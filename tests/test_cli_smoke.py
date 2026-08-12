@@ -63,6 +63,10 @@ def test_list_shows_available_lessons() -> None:
     assert "Visual Transformer Blocks" in result.stdout
     assert "llm.13_multimodal_sequence" in result.stdout
     assert "Unified Image and Text Tokens" in result.stdout
+    assert "llm.14_multimodal_attention_mask" in result.stdout
+    assert "Visual Prefix and Causal Text" in result.stdout
+    assert "llm.15_tiny_native_vlm" in result.stdout
+    assert "Tiny Native Vision-Language Model" in result.stdout
     assert "wm.01_vae" in result.stdout
     assert "Variational Autoencoder" in result.stdout
     assert "wm.02_latent_dynamics" in result.stdout

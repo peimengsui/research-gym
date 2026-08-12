@@ -1,0 +1,8 @@
+id: llm.15_tiny_native_vlm
+title: Tiny Native Vision-Language Model
+track: llm
+level: intermediate
+summary: Connect native image tokens and causal text prediction in one end-to-end Transformer.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py

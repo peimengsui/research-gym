@@ -437,6 +437,21 @@ research-gym/
         scripts/
           run_demo.py
 
+      15_tiny_native_vlm/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        provided.py
+        hints.md
+        review.md
+        tests/
+          test_tiny_native_vlm.py
+        scripts/
+          run_demo.py
+
     world_models/
       01_vae/
         lesson.yaml
