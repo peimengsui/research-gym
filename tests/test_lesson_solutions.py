@@ -40,6 +40,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
         "llm.13_multimodal_sequence",
         "llm.14_multimodal_attention_mask",
         "llm.15_tiny_native_vlm",
+        "llm.16_multimodal_sft_data",
         "wm.01_vae",
         "wm.02_latent_dynamics",
         "wm.03_mdn_rnn",

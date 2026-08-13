@@ -1,0 +1,8 @@
+id: llm.16_multimodal_sft_data
+title: Image-Text Conversations
+track: llm
+level: intermediate
+summary: Format image-grounded conversations into padded assistant-only SFT batches.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py

@@ -452,6 +452,21 @@ research-gym/
         scripts/
           run_demo.py
 
+      16_multimodal_sft_data/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        provided.py
+        hints.md
+        review.md
+        tests/
+          test_multimodal_sft_data.py
+        scripts/
+          run_demo.py
+
     world_models/
       01_vae/
         lesson.yaml

@@ -74,6 +74,7 @@ def test_mvp_lessons_have_complete_structure() -> None:
         PROJECT_ROOT / "tracks" / "llm" / "13_multimodal_sequence",
         PROJECT_ROOT / "tracks" / "llm" / "14_multimodal_attention_mask",
         PROJECT_ROOT / "tracks" / "llm" / "15_tiny_native_vlm",
+        PROJECT_ROOT / "tracks" / "llm" / "16_multimodal_sft_data",
         PROJECT_ROOT / "tracks" / "world_models" / "01_vae",
         PROJECT_ROOT / "tracks" / "world_models" / "02_latent_dynamics",
         PROJECT_ROOT / "tracks" / "world_models" / "03_mdn_rnn",
