@@ -131,15 +131,26 @@ def multimodal_sft_loss(
 ) -> torch.Tensor:
     """Run the VLM and return assistant-only next-token cross-entropy."""
 
-    # TODO 4: Reject a batch with no non-ignored labels. Pass images, input IDs,
-    # attention mask, and labels to model. Verify loss is present and return it.
+    # TODO 4: Keep the loss helper strict: reject a batch with no non-ignored
+    # labels because cross-entropy has no valid target. A production data or
+    # training loop may filter/skip and count such batches before calling this
+    # helper. Pass images, input IDs, attention mask, and labels to model.
+    # Verify loss is present and return it.
     raise NotImplementedError
 
 
 def make_toy_multimodal_conversations() -> list[MultimodalConversation]:
     """Return tiny synthetic image-caption examples for the demo."""
 
-    # TODO 5: Return two 1 x 4 x 4 image conversations: an all-zero dark image
-    # and an all-one bright image, sharing the user prompt "what brightness" and
-    # using assistant responses "dark image" and "bright image" respectively.
-    raise NotImplementedError
+    return [
+        MultimodalConversation(
+            image=torch.zeros(1, 4, 4),
+            user_text="what brightness",
+            assistant_text="dark image",
+        ),
+        MultimodalConversation(
+            image=torch.ones(1, 4, 4),
+            user_text="what brightness",
+            assistant_text="bright image",
+        ),
+    ]

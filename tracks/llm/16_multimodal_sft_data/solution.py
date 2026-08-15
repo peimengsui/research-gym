@@ -175,6 +175,8 @@ def multimodal_sft_loss(
 ) -> torch.Tensor:
     """Run the VLM and return assistant-only next-token cross-entropy."""
 
+    # Keep this final invariant strict. If noisy data can create an empty batch,
+    # the caller should skip and count it before invoking the loss helper.
     if not (batch.labels != IGNORE_INDEX).any():
         raise ValueError("batch must contain at least one supervised label")
     output = model(

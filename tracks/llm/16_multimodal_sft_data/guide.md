@@ -1,7 +1,7 @@
 # Guide
 
 Open `implementation.py`. The completed VLM is in `provided.py`. Complete the
-five TODOs in order.
+four TODOs in order.
 
 ## 1. Format one conversation
 
@@ -51,12 +51,39 @@ First ensure the batch contains at least one label other than `IGNORE_INDEX`.
 Call the model with images, input IDs, attention mask, and labels. The completed
 model applies text-only vocabulary logits and ignored-label cross-entropy.
 
-## 5. Build tiny examples
+Keep this validation strict inside `multimodal_sft_loss`. Cross-entropy has no
+meaning when every target is ignored and may produce a non-finite loss. In this
+lesson, `encode_multimodal_conversation` already rejects an example when
+truncation removes all assistant targets, so reaching the loss with an empty
+supervision batch usually reveals a bug in data preparation.
 
-Return one all-zero image labeled `dark image` and one all-one image labeled
-`bright image`. Both use the prompt `what brightness`. These synthetic examples
-make it easy to verify that image-conditioned gradients exist without external
-datasets or image libraries.
+With a noisy real-world dataset, filter invalid examples before collation and
+count them so data problems remain visible. If an empty batch can still occur,
+skip it explicitly in the training loop rather than changing the loss function
+to silently return zero:
+
+```python
+skipped_batches = 0
+
+for batch in training_batches:
+    if not (batch.labels != IGNORE_INDEX).any():
+        skipped_batches += 1
+        continue
+
+    loss = multimodal_sft_loss(model, batch)
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+```
+
+Log or assert on `skipped_batches` at the end of training. Frequent skips mean
+the dataset, truncation length, or conversation formatting needs correction.
+In distributed training, every worker must make the same skip decision to keep
+their optimization steps synchronized.
+
+The prefilled `make_toy_multimodal_conversations` helper supplies an all-zero
+dark image and an all-one bright image for the demo. It is demo fixture code,
+not a learner TODO.
 
 ## Run
 
