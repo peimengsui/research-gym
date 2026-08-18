@@ -24,6 +24,7 @@ and code-level fluency. Ordering is directional rather than a release promise.
 - complete Visual Prefix and Causal Text lesson
 - complete Tiny Native Vision-Language Model lesson
 - complete Image-Text Conversations lesson
+- complete Image Prefill, KV Cache, and Decoding lesson
 - complete Variational Autoencoder lesson
 - complete Latent Dynamics lesson
 - complete MDN-RNN lesson
@@ -60,6 +61,7 @@ Completed:
 - `llm.14_multimodal_attention_mask` — Visual Prefix and Causal Text
 - `llm.15_tiny_native_vlm` — Tiny Native Vision-Language Model
 - `llm.16_multimodal_sft_data` — Image-Text Conversations
+- `llm.17_multimodal_generation` — Image Prefill, KV Cache, and Decoding
 
 Planned:
 
@@ -77,7 +79,6 @@ image patch tokens
 → multimodal training, generation, and evaluation
 ```
 
-- `llm.17_multimodal_generation` — Image Prefill, KV Cache, and Decoding
 - `llm.18_multimodal_eval` — Tiny Vision-Language Evaluation Harness
 - `llm.19_quantization` — Weight Quantization
 
@@ -127,7 +128,7 @@ Stage 3 — modern extensions:
 
 ### Language models
 
-- continue native vision with `llm.17_multimodal_generation`
+- continue native vision with `llm.18_multimodal_eval`
 
 ### World models
 
