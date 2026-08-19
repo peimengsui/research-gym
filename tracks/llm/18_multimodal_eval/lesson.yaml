@@ -1,0 +1,8 @@
+id: llm.18_multimodal_eval
+title: Tiny Vision-Language Evaluation Harness
+track: llm
+level: intermediate
+summary: Evaluate multimodal generation and candidate ranking with inspectable metrics.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py
