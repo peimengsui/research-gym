@@ -1,0 +1,8 @@
+id: llm.19_quantization
+title: Weight Quantization
+track: llm
+level: intermediate
+summary: Compress linear weights with symmetric int8 quantization and measure approximation trade-offs.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py

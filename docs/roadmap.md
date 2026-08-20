@@ -26,6 +26,7 @@ and code-level fluency. Ordering is directional rather than a release promise.
 - complete Image-Text Conversations lesson
 - complete Image Prefill, KV Cache, and Decoding lesson
 - complete Tiny Vision-Language Evaluation Harness lesson
+- complete Weight Quantization lesson
 - complete Variational Autoencoder lesson
 - complete Latent Dynamics lesson
 - complete MDN-RNN lesson
@@ -64,24 +65,12 @@ Completed:
 - `llm.16_multimodal_sft_data` — Image-Text Conversations
 - `llm.17_multimodal_generation` — Image Prefill, KV Cache, and Decoding
 - `llm.18_multimodal_eval` — Tiny Vision-Language Evaluation Harness
+- `llm.19_quantization` — Weight Quantization
 
 Planned:
 
-The next sequence continues native vision support. Image patches become model
-tokens and eventually share Transformer layers with text tokens, rather than
-depending on an opaque pretrained vision encoder. Lessons should use synthetic
-Torch images so tests remain self-contained and CPU-friendly.
-
-```text
-image patch tokens
-→ visual attention
-→ unified image-text sequence
-→ multimodal attention mask
-→ tiny native VLM
-→ multimodal training, generation, and evaluation
-```
-
-- `llm.19_quantization` — Weight Quantization
+No additional language-model lessons are currently scheduled. Future additions
+should remain small, CPU-friendly, and build directly on the completed sequence.
 
 ### World models
 
@@ -129,7 +118,7 @@ Stage 3 — modern extensions:
 
 ### Language models
 
-- continue language-model foundations with `llm.19_quantization`
+- identify the next small extension after weight quantization
 
 ### World models
 

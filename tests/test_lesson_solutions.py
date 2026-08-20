@@ -43,6 +43,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
         "llm.16_multimodal_sft_data",
         "llm.17_multimodal_generation",
         "llm.18_multimodal_eval",
+        "llm.19_quantization",
         "wm.01_vae",
         "wm.02_latent_dynamics",
         "wm.03_mdn_rnn",
