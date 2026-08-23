@@ -29,6 +29,9 @@ and code-level fluency. Ordering is directional rather than a release promise.
 - complete Weight Quantization lesson
 - complete Draft, Verify, and Correct lesson
 - complete KV Blocks and Request Scheduling lesson
+- complete Videos as Spatiotemporal Tokens lesson
+- complete Spatial and Temporal Attention lesson
+- complete Video-Text Generation and Evaluation lesson
 - complete Variational Autoencoder lesson
 - complete Latent Dynamics lesson
 - complete MDN-RNN lesson
@@ -70,19 +73,16 @@ Completed:
 - `llm.19_quantization` — Weight Quantization
 - `llm.20_speculative_decoding` — Draft, Verify, and Correct
 - `llm.21_paged_kv_and_continuous_batching` — KV Blocks and Request Scheduling
-
-Planned:
-
-The remaining sequence stays compact: three native video lessons followed by
-three native audio lessons. Later multimodal lessons should carry forward the
-existing SFT, generation, and evaluation code instead of asking learners to
-reimplement those mechanics for every modality.
-
-Native video:
-
 - `llm.22_video_tubelet_embeddings` — Videos as Spatiotemporal Tokens
 - `llm.23_factorized_video_attention` — Spatial and Temporal Attention
 - `llm.24_tiny_video_language_model` — Video-Text Generation and Evaluation
+
+Planned:
+
+The remaining sequence stays compact with three native audio lessons. Later
+multimodal lessons should carry forward the existing SFT, generation, and
+evaluation code instead of asking learners to reimplement those mechanics for
+every modality.
 
 Native audio:
 
@@ -90,9 +90,8 @@ Native audio:
 - `llm.26_audio_temporal_attention` — Variable-Duration Audio and Attention
 - `llm.27_tiny_audio_language_model` — Audio-Text Generation and Evaluation
 
-Video lessons should use tiny synthetic clips such as moving squares or changing
-brightness. Audio lessons should generate waveforms directly with PyTorch and
-use `torch.stft`, avoiding downloaded datasets and additional audio dependencies.
+Audio lessons should generate waveforms directly with PyTorch and use
+`torch.stft`, avoiding downloaded datasets and additional audio dependencies.
 
 ### World models
 
@@ -140,7 +139,7 @@ Stage 3 — modern extensions:
 
 ### Language models
 
-- begin native video with `llm.22_video_tubelet_embeddings`
+- begin native audio with `llm.25_audio_spectrogram_tokens`
 
 ### World models
 
@@ -152,7 +151,6 @@ Stage 3 — modern extensions:
 
 ### Stage 2: deepen track coverage
 
-- continue native video with `llm.22` through `llm.24`
 - continue native audio with `llm.25` through `llm.27`
 - world-model uncertainty and policy learning in latent space
 - diffusion noise prediction, DDPM sampling, and tiny U-Net denoising

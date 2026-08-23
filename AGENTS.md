@@ -542,6 +542,50 @@ research-gym/
         scripts/
           run_demo.py
 
+      22_video_tubelet_embeddings/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        hints.md
+        review.md
+        tests/
+          test_video_tubelet_embeddings.py
+        scripts/
+          run_demo.py
+
+      23_factorized_video_attention/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        provided.py
+        hints.md
+        review.md
+        tests/
+          test_factorized_video_attention.py
+        scripts/
+          run_demo.py
+
+      24_tiny_video_language_model/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        provided.py
+        hints.md
+        review.md
+        tests/
+          test_tiny_video_language_model.py
+        scripts/
+          run_demo.py
+
     world_models/
       01_vae/
         lesson.yaml

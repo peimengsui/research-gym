@@ -37,6 +37,14 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
         "llm.14_multimodal_attention_mask",
         "llm.15_tiny_native_vlm",
         "llm.16_multimodal_sft_data",
+        "llm.17_multimodal_generation",
+        "llm.18_multimodal_eval",
+        "llm.19_quantization",
+        "llm.20_speculative_decoding",
+        "llm.21_paged_kv_and_continuous_batching",
+        "llm.22_video_tubelet_embeddings",
+        "llm.23_factorized_video_attention",
+        "llm.24_tiny_video_language_model",
         "wm.01_vae",
         "wm.02_latent_dynamics",
         "wm.03_mdn_rnn",
@@ -68,11 +76,19 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
     assert lessons[22].title == "Visual Prefix and Causal Text"
     assert lessons[23].title == "Tiny Native Vision-Language Model"
     assert lessons[24].title == "Image-Text Conversations"
-    assert lessons[25].title == "Variational Autoencoder"
-    assert lessons[26].title == "Latent Dynamics"
-    assert lessons[27].title == "MDN-RNN"
-    assert lessons[28].title == "World Model Loop"
-    assert lessons[29].title == "CEM Planning"
+    assert lessons[25].title == "Image Prefill, KV Cache, and Decoding"
+    assert lessons[26].title == "Tiny Vision-Language Evaluation Harness"
+    assert lessons[27].title == "Weight Quantization"
+    assert lessons[28].title == "Draft, Verify, and Correct"
+    assert lessons[29].title == "KV Blocks and Request Scheduling"
+    assert lessons[30].title == "Videos as Spatiotemporal Tokens"
+    assert lessons[31].title == "Spatial and Temporal Attention"
+    assert lessons[32].title == "Video-Text Generation and Evaluation"
+    assert lessons[33].title == "Variational Autoencoder"
+    assert lessons[34].title == "Latent Dynamics"
+    assert lessons[35].title == "MDN-RNN"
+    assert lessons[36].title == "World Model Loop"
+    assert lessons[37].title == "CEM Planning"
 
 
 def test_get_lesson_returns_requested_lesson() -> None:

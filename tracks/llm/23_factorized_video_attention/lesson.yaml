@@ -1,0 +1,8 @@
+id: llm.23_factorized_video_attention
+title: Spatial and Temporal Attention
+track: llm
+level: intermediate
+summary: Contextualize video tokens by alternating attention across space and time.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py
