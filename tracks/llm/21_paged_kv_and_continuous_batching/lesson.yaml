@@ -1,0 +1,8 @@
+id: llm.21_paged_kv_and_continuous_batching
+title: KV Blocks and Request Scheduling
+track: llm
+level: intermediate
+summary: Manage non-contiguous KV blocks while continuously scheduling variable-length requests.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py

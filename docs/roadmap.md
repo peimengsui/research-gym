@@ -27,6 +27,8 @@ and code-level fluency. Ordering is directional rather than a release promise.
 - complete Image Prefill, KV Cache, and Decoding lesson
 - complete Tiny Vision-Language Evaluation Harness lesson
 - complete Weight Quantization lesson
+- complete Draft, Verify, and Correct lesson
+- complete KV Blocks and Request Scheduling lesson
 - complete Variational Autoencoder lesson
 - complete Latent Dynamics lesson
 - complete MDN-RNN lesson
@@ -66,11 +68,31 @@ Completed:
 - `llm.17_multimodal_generation` — Image Prefill, KV Cache, and Decoding
 - `llm.18_multimodal_eval` — Tiny Vision-Language Evaluation Harness
 - `llm.19_quantization` — Weight Quantization
+- `llm.20_speculative_decoding` — Draft, Verify, and Correct
+- `llm.21_paged_kv_and_continuous_batching` — KV Blocks and Request Scheduling
 
 Planned:
 
-No additional language-model lessons are currently scheduled. Future additions
-should remain small, CPU-friendly, and build directly on the completed sequence.
+The remaining sequence stays compact: three native video lessons followed by
+three native audio lessons. Later multimodal lessons should carry forward the
+existing SFT, generation, and evaluation code instead of asking learners to
+reimplement those mechanics for every modality.
+
+Native video:
+
+- `llm.22_video_tubelet_embeddings` — Videos as Spatiotemporal Tokens
+- `llm.23_factorized_video_attention` — Spatial and Temporal Attention
+- `llm.24_tiny_video_language_model` — Video-Text Generation and Evaluation
+
+Native audio:
+
+- `llm.25_audio_spectrogram_tokens` — Waveforms, STFT, and Audio Patches
+- `llm.26_audio_temporal_attention` — Variable-Duration Audio and Attention
+- `llm.27_tiny_audio_language_model` — Audio-Text Generation and Evaluation
+
+Video lessons should use tiny synthetic clips such as moving squares or changing
+brightness. Audio lessons should generate waveforms directly with PyTorch and
+use `torch.stft`, avoiding downloaded datasets and additional audio dependencies.
 
 ### World models
 
@@ -118,7 +140,7 @@ Stage 3 — modern extensions:
 
 ### Language models
 
-- identify the next small extension after weight quantization
+- begin native video with `llm.22_video_tubelet_embeddings`
 
 ### World models
 
@@ -130,14 +152,14 @@ Stage 3 — modern extensions:
 
 ### Stage 2: deepen track coverage
 
-- native image patch tokens, visual attention, and unified image-text sequences
+- continue native video with `llm.22` through `llm.24`
+- continue native audio with `llm.25` through `llm.27`
 - world-model uncertainty and policy learning in latent space
 - diffusion noise prediction, DDPM sampling, and tiny U-Net denoising
 
 ### Stage 3: connect to broader research patterns
 
-- small vision-language model lab
-- multimodal training data, generation, and evaluation
+- compare inference and modality behavior through richer reports
 - tiny diffusion image lab
 - lesson authoring validation and contribution templates
 - richer reports that summarize tests, demos, and learner reflection

@@ -512,6 +512,36 @@ research-gym/
         scripts/
           run_demo.py
 
+      20_speculative_decoding/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        provided.py
+        hints.md
+        review.md
+        tests/
+          test_speculative_decoding.py
+        scripts/
+          run_demo.py
+
+      21_paged_kv_and_continuous_batching/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        provided.py
+        hints.md
+        review.md
+        tests/
+          test_paged_kv_and_continuous_batching.py
+        scripts/
+          run_demo.py
+
     world_models/
       01_vae/
         lesson.yaml
