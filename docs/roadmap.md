@@ -105,9 +105,52 @@ Completed:
 
 Planned:
 
-- `wm.06_dreamer_lite` — Latent Imagination and Actor-Critic Components
-- `wm.07_uncertainty` — Ensembles and Model Uncertainty
-- `wm.08_policy_in_latent_space` — Policy Learning Inside a Learned World
+- `wm.06_jepa_latent_prediction` — Predict Targets in Representation Space
+- `wm.07_action_conditioned_jepa` — Actions and Predictive Representations
+- `wm.08_imagined_rollouts` — Latent Imagination and Lambda Returns
+- `wm.09_actor_critic_from_imagination` — Actor and Value Learning in Dreams
+- `wm.10_tiny_vla_policy` — Vision, Language, and Action Tokens
+- `wm.11_joint_world_action_model` — Predict Futures and Actions Together
+- `wm.12_wam_imagine_then_act` — Receding-Horizon Planning with a WAM
+- `wm.13_stochastic_world_action_model` — Multiple Futures and Action Strategies
+- `wm.14_uncertainty_aware_planning` — Model Disagreement and Safer Plans
+
+The lessons should form one controlled comparison using tiny synthetic
+trajectories, moving shapes, language goals, and discrete or two-dimensional
+continuous actions. No lesson should require a robot simulator, downloaded
+dataset, pretrained foundation model, or long training run.
+
+The intended scope boundaries are:
+
+- `wm.06` implements masked latent prediction, an online/target encoder,
+  stop-gradient, an exponential-moving-average update, and latent-space loss. It
+  compares JEPA prediction with VAE pixel reconstruction without reproducing a
+  large vision architecture.
+- `wm.07` adds one-step action-conditioned latent prediction and short goal-based
+  rollouts. The completed representation learner from `wm.06` is provided.
+- `wm.08` implements imagined latent rollouts and lambda returns only. Reward and
+  continuation predictors are small provided modules.
+- `wm.09` adds actor and value losses to the provided imagination code. Splitting
+  these lessons avoids placing an entire Dreamer-style system in one scaffold.
+- `wm.10` reuses provided visual, video, and language encoders and focuses on
+  action representation, behavior-cloning loss, and short action chunks. It is
+  explicitly a reactive policy baseline, not an explicit world model.
+- `wm.11` uses a shared latent representation with a next-latent objective and an
+  action objective. It compares reactive VLA prediction with joint world/action
+  prediction but does not generate pixels or use a diffusion action decoder.
+- `wm.12` carries forward the trained joint WAM and existing CEM utilities. The
+  learner rolls out candidate action chunks, scores predicted goal progress,
+  executes the first action, and replans; optimizer mechanics are provided.
+- `wm.13` carries forward the WAM and MDN utilities. The learner represents,
+  samples, and scores several coherent future/action hypotheses instead of
+  averaging incompatible strategies.
+- `wm.14` distinguishes model disagreement from valid multimodal futures. A small
+  ensemble supplies epistemic uncertainty for risk-penalized action selection.
+
+WAM lessons should remain latent-space exercises with action chunks of roughly
+three to five steps. Video generation, photorealistic prediction, cross-embodiment
+robotics, and real-time deployment belong in later extensions rather than these
+foundational lessons.
 
 ### Diffusion models
 
@@ -143,7 +186,8 @@ Stage 3 — modern extensions:
 
 ### World models
 
-- Dreamer-lite latent imagination and actor-critic components
+- begin JEPA-style representation learning with `wm.06`
+- connect actions to predictive representations with `wm.07`
 
 ### Diffusion models
 
@@ -152,12 +196,15 @@ Stage 3 — modern extensions:
 ### Stage 2: deepen track coverage
 
 - continue native audio with `llm.25` through `llm.27`
-- world-model uncertainty and policy learning in latent space
+- build imagined rollouts and actor-critic learning with `wm.08` through `wm.09`
+- add the reactive VLA baseline with `wm.10`
 - diffusion noise prediction, DDPM sampling, and tiny U-Net denoising
 
 ### Stage 3: connect to broader research patterns
 
 - compare inference and modality behavior through richer reports
+- connect future prediction and action generation with `wm.11` through `wm.13`
+- add uncertainty-aware WAM planning with `wm.14`
 - tiny diffusion image lab
 - lesson authoring validation and contribution templates
 - richer reports that summarize tests, demos, and learner reflection

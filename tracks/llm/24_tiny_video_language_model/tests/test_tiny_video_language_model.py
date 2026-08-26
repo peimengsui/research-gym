@@ -1,3 +1,4 @@
+import pytest
 import torch
 from torch import nn
 
@@ -72,6 +73,16 @@ def test_model_loss_supports_video_and_parameter_gradients() -> None:
     assert model.lm_head.weight.grad is not None
 
 
+def test_model_validates_target_ids_before_computing_loss() -> None:
+    model = make_model()
+    videos = torch.randn(1, 4, 1, 4, 4)
+    text = torch.tensor([[1, 3]])
+    invalid_targets = torch.tensor([[3, 11]])
+
+    with pytest.raises(ValueError, match="targets contain IDs"):
+        model(videos, text, invalid_targets)
+
+
 class ScriptedVideoModel(nn.Module):
     """Predict token 4/5 from video brightness, then EOS at absolute position 2."""
 
@@ -110,6 +121,21 @@ def test_generation_with_zero_budget_returns_prompt_object() -> None:
     assert generated is prompt
 
 
+def test_generation_validates_prompt_ids_before_decoding() -> None:
+    model = ScriptedVideoModel()
+    videos = torch.zeros(1, 4, 1, 4, 4)
+
+    with pytest.raises(ValueError, match="outside the vocabulary"):
+        generate_video_text(model, videos, torch.tensor([[1, 6]]), 1)
+
+
+def test_generation_validates_video_batch_shape() -> None:
+    model = ScriptedVideoModel()
+
+    with pytest.raises(ValueError, match="matching batches"):
+        generate_video_text(model, torch.zeros(4, 1, 4, 4), torch.tensor([[1, 3]]), 1)
+
+
 def test_candidate_score_prefers_scripted_answer() -> None:
     model = ScriptedVideoModel()
     video = torch.zeros(4, 1, 4, 4)
@@ -123,6 +149,19 @@ def test_candidate_score_prefers_scripted_answer() -> None:
     )
 
     assert correct > wrong
+
+
+def test_candidate_scoring_validates_combined_length() -> None:
+    model = ScriptedVideoModel()
+    video = torch.zeros(4, 1, 4, 4)
+
+    with pytest.raises(ValueError, match="prompt plus candidate"):
+        candidate_average_log_probability(
+            model,
+            video,
+            torch.tensor([1, 1, 1, 1, 1]),
+            torch.tensor([4, 2]),
+        )
 
 
 def test_evaluation_reports_generation_and_candidate_accuracy() -> None:
@@ -151,6 +190,23 @@ def test_evaluation_reports_generation_and_candidate_accuracy() -> None:
     assert summary.generation_exact_match == 1.0
     assert summary.candidate_accuracy == 1.0
     assert len(summary.records) == 2
+    assert model.training
+
+
+def test_evaluation_validates_examples_before_changing_model_mode() -> None:
+    model = ScriptedVideoModel()
+    model.train()
+    invalid_example = VideoEvalExample(
+        torch.zeros(4, 1, 4, 4),
+        torch.tensor([1, 3]),
+        torch.tensor([4, 2]),
+        (torch.tensor([4, 2]),),
+        1,
+    )
+
+    with pytest.raises(ValueError, match="correct_candidate_index"):
+        evaluate_video_language_model(model, [invalid_example], 2, eos_token_id=2)
+
     assert model.training
 
 

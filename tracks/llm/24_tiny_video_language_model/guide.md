@@ -2,6 +2,8 @@
 
 The factorized video encoder, head helpers, feed-forward layer, and toy
 vocabulary are complete in `provided.py`. Complete seven TODO groups.
+Input-shape, dtype, vocabulary-range, length, and evaluation-example validation
+are also provided so the TODOs stay focused on the learning mechanisms.
 
 ## 1. Build the sequence mask
 
@@ -23,20 +25,21 @@ equal-length text batches; padding/data collation was covered in `llm.16`.
 
 Encode the video, append the learned separator and text embeddings, add unified
 positions, build the mask, run every Transformer block, and produce logits only
-at text positions. If targets are supplied, compute cross-entropy.
+at text positions. If the already validated targets are supplied, compute
+cross-entropy.
 
 ## 5. Generate
 
-Validate the token budget, repeatedly run the full model, choose `argmax`, append
-EOS for already finished rows, and stop when every row is finished. The
-recomputation is explicit educational simplicity, not an efficient serving path.
+Validation is provided. Repeatedly run the full model, choose `argmax`, append EOS
+for already finished rows, and stop when every row is finished. The recomputation
+is explicit educational simplicity, not an efficient serving path.
 
 ## 6–7. Score and evaluate
 
-For a candidate answer, concatenate prompt and candidate. Logits beginning at
-`prompt_length - 1` predict candidate tokens. Average their selected log
-probabilities. Evaluation runs generation and candidate ranking, strips EOS for
-exact match, and restores the model's original training/evaluation mode.
+Candidate and example validation plus EOS stripping are provided. Concatenate
+prompt and candidate; logits beginning at `prompt_length - 1` predict candidate
+tokens. Average their selected log probabilities. Evaluation runs generation and
+candidate ranking and restores the model's original training/evaluation mode.
 
 ## Run
 

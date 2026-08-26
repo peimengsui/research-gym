@@ -18,6 +18,26 @@ from provided import (  # noqa: F401 - head helpers are used by TODO 2
 IGNORE_INDEX = -100
 
 
+def _validate_token_ids(
+    name: str,
+    token_ids: torch.Tensor,
+    expected_ndim: int,
+    vocab_size: int,
+) -> None:
+    """Validate token tensor shape, dtype, non-emptiness, and vocabulary range."""
+
+    if token_ids.ndim != expected_ndim or token_ids.dtype != torch.long:
+        raise ValueError(
+            f"{name} must be a non-empty {expected_ndim}D torch.long tensor"
+        )
+    if token_ids.numel() == 0 or token_ids.shape[-1] == 0:
+        raise ValueError(
+            f"{name} must be a non-empty {expected_ndim}D torch.long tensor"
+        )
+    if ((token_ids < 0) | (token_ids >= vocab_size)).any():
+        raise ValueError(f"{name} contains token IDs outside the vocabulary")
+
+
 def make_video_prefix_attention_mask(
     batch_size: int,
     video_token_count: int,
@@ -144,15 +164,27 @@ class TinyVideoLanguageModel(nn.Module):
         text_token_ids: torch.Tensor,
         targets: torch.Tensor | None = None,
     ) -> VideoLMOutput:
-        if text_token_ids.ndim != 2 or text_token_ids.dtype != torch.long:
-            raise ValueError("text_token_ids must be a 2D torch.long tensor")
-        if not 0 < text_token_ids.shape[1] <= self.max_text_tokens:
+        _validate_token_ids(
+            "text_token_ids",
+            text_token_ids,
+            expected_ndim=2,
+            vocab_size=self.vocab_size,
+        )
+        if text_token_ids.shape[1] > self.max_text_tokens:
             raise ValueError("text length must be within max_text_tokens")
-        if videos.shape[0] != text_token_ids.shape[0]:
+        if videos.ndim != 5 or videos.shape[0] != text_token_ids.shape[0]:
             raise ValueError("video and text batch sizes must match")
+        if targets is not None:
+            if targets.shape != text_token_ids.shape or targets.dtype != torch.long:
+                raise ValueError("targets must match text_token_ids as torch.long")
+            invalid_targets = (targets != IGNORE_INDEX) & (
+                (targets < 0) | (targets >= self.vocab_size)
+            )
+            if invalid_targets.any():
+                raise ValueError("targets contain IDs outside the vocabulary")
         # TODO 4: Concatenate video, separator, and text embeddings; add unified
-        # positions; run masked blocks; return text-position logits and optional
-        # cross-entropy against targets.
+        # positions; run masked blocks; return text-position logits and compute
+        # optional cross-entropy against the already validated targets.
         raise NotImplementedError
 
 
@@ -166,8 +198,23 @@ def generate_video_text(
 ) -> torch.Tensor:
     """Greedily extend equal-length prompts, recomputing the tiny model."""
 
-    # TODO 5: Validate budget/vocabulary, repeatedly choose final-position argmax,
-    # append EOS for finished rows, and stop when all rows finish or budget ends.
+    _validate_token_ids(
+        "prompt_token_ids",
+        prompt_token_ids,
+        expected_ndim=2,
+        vocab_size=model.vocab_size,
+    )
+    if videos.ndim != 5 or videos.shape[0] != prompt_token_ids.shape[0]:
+        raise ValueError("videos and prompt_token_ids must have matching batches")
+    if max_new_tokens < 0:
+        raise ValueError("max_new_tokens must be non-negative")
+    if prompt_token_ids.shape[1] + max_new_tokens > model.max_text_tokens:
+        raise ValueError("prompt plus generation exceeds max_text_tokens")
+    if eos_token_id is not None and not 0 <= eos_token_id < model.vocab_size:
+        raise ValueError("eos_token_id must be in the vocabulary")
+
+    # TODO 5: Repeatedly choose final-position argmax, append EOS for already
+    # finished rows, and stop when all rows finish or the token budget ends.
     raise NotImplementedError
 
 
@@ -197,6 +244,57 @@ class VideoEvaluationSummary:
     records: tuple[VideoEvaluationRecord, ...]
 
 
+def _before_eos(token_ids: torch.Tensor, eos_token_id: int) -> tuple[int, ...]:
+    """Return token IDs before the first EOS marker."""
+
+    values = token_ids.tolist()
+    if eos_token_id in values:
+        values = values[: values.index(eos_token_id)]
+    return tuple(values)
+
+
+def _validate_eval_example(
+    model: TinyVideoLanguageModel,
+    example: VideoEvalExample,
+    max_new_tokens: int,
+) -> None:
+    """Validate one evaluation example before generation or model scoring."""
+
+    if example.video.ndim != 4:
+        raise ValueError("each video must have shape (frames, channels, height, width)")
+    _validate_token_ids(
+        "prompt_token_ids",
+        example.prompt_token_ids,
+        expected_ndim=1,
+        vocab_size=model.vocab_size,
+    )
+    _validate_token_ids(
+        "reference_answer_token_ids",
+        example.reference_answer_token_ids,
+        expected_ndim=1,
+        vocab_size=model.vocab_size,
+    )
+    if not example.candidate_answer_token_ids:
+        raise ValueError("each example must have candidates")
+    if (
+        not 0
+        <= example.correct_candidate_index
+        < len(example.candidate_answer_token_ids)
+    ):
+        raise ValueError("correct_candidate_index is outside candidates")
+    if example.prompt_token_ids.numel() + max_new_tokens > model.max_text_tokens:
+        raise ValueError("prompt plus generation exceeds max_text_tokens")
+    for candidate in example.candidate_answer_token_ids:
+        _validate_token_ids(
+            "candidate_token_ids",
+            candidate,
+            expected_ndim=1,
+            vocab_size=model.vocab_size,
+        )
+        if example.prompt_token_ids.numel() + candidate.numel() > model.max_text_tokens:
+            raise ValueError("prompt plus candidate exceeds max_text_tokens")
+
+
 @torch.no_grad()
 def candidate_average_log_probability(
     model: TinyVideoLanguageModel,
@@ -206,9 +304,25 @@ def candidate_average_log_probability(
 ) -> torch.Tensor:
     """Return mean teacher-forced log probability for one candidate answer."""
 
-    # TODO 6: Validate 1D non-empty inputs, concatenate prompt/candidate, run one
-    # model row, align logits beginning at prompt_length - 1, and average selected
-    # candidate-token log probabilities.
+    if video.ndim != 4:
+        raise ValueError("video must have shape (frames, channels, height, width)")
+    _validate_token_ids(
+        "prompt_token_ids",
+        prompt_token_ids,
+        expected_ndim=1,
+        vocab_size=model.vocab_size,
+    )
+    _validate_token_ids(
+        "candidate_token_ids",
+        candidate_token_ids,
+        expected_ndim=1,
+        vocab_size=model.vocab_size,
+    )
+    if prompt_token_ids.numel() + candidate_token_ids.numel() > model.max_text_tokens:
+        raise ValueError("prompt plus candidate exceeds max_text_tokens")
+
+    # TODO 6: Concatenate prompt/candidate, run one model row, align logits
+    # beginning at prompt_length - 1, and average the selected log probabilities.
     raise NotImplementedError
 
 
@@ -221,6 +335,13 @@ def evaluate_video_language_model(
 ) -> VideoEvaluationSummary:
     """Evaluate free generation exact match and candidate ranking."""
 
-    # TODO 7: Validate inputs, preserve model mode, generate and strip EOS, score
-    # each candidate, record outcomes, restore mode, and return mean metrics.
+    if not examples or max_new_tokens <= 0:
+        raise ValueError("examples and max_new_tokens must be non-empty/positive")
+    if not 0 <= eos_token_id < model.vocab_size:
+        raise ValueError("eos_token_id must be in the vocabulary")
+    for example in examples:
+        _validate_eval_example(model, example, max_new_tokens)
+
+    # TODO 7: Preserve model mode, generate and strip EOS, score each candidate,
+    # record outcomes, restore mode, and return the two mean metrics.
     raise NotImplementedError
