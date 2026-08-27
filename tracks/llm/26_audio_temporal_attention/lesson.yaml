@@ -1,0 +1,8 @@
+id: llm.26_audio_temporal_attention
+title: Variable-Duration Audio and Attention
+track: llm
+level: intermediate
+summary: Convert sample lengths into audio-token validity and attend safely over padded clips.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py

@@ -1,0 +1,8 @@
+id: llm.25_audio_spectrogram_tokens
+title: Waveforms, STFT, and Audio Patches
+track: llm
+level: intermediate
+summary: Convert waveforms into positioned spectrogram patch tokens with PyTorch STFT.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py

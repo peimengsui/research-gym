@@ -45,6 +45,9 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
         "llm.22_video_tubelet_embeddings",
         "llm.23_factorized_video_attention",
         "llm.24_tiny_video_language_model",
+        "llm.25_audio_spectrogram_tokens",
+        "llm.26_audio_temporal_attention",
+        "llm.27_tiny_audio_language_model",
         "wm.01_vae",
         "wm.02_latent_dynamics",
         "wm.03_mdn_rnn",
@@ -84,11 +87,14 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
     assert lessons[30].title == "Videos as Spatiotemporal Tokens"
     assert lessons[31].title == "Spatial and Temporal Attention"
     assert lessons[32].title == "Video-Text Generation and Evaluation"
-    assert lessons[33].title == "Variational Autoencoder"
-    assert lessons[34].title == "Latent Dynamics"
-    assert lessons[35].title == "MDN-RNN"
-    assert lessons[36].title == "World Model Loop"
-    assert lessons[37].title == "CEM Planning"
+    assert lessons[33].title == "Waveforms, STFT, and Audio Patches"
+    assert lessons[34].title == "Variable-Duration Audio and Attention"
+    assert lessons[35].title == "Audio-Text Generation and Evaluation"
+    assert lessons[36].title == "Variational Autoencoder"
+    assert lessons[37].title == "Latent Dynamics"
+    assert lessons[38].title == "MDN-RNN"
+    assert lessons[39].title == "World Model Loop"
+    assert lessons[40].title == "CEM Planning"
 
 
 def test_get_lesson_returns_requested_lesson() -> None:

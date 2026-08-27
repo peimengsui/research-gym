@@ -32,6 +32,9 @@ and code-level fluency. Ordering is directional rather than a release promise.
 - complete Videos as Spatiotemporal Tokens lesson
 - complete Spatial and Temporal Attention lesson
 - complete Video-Text Generation and Evaluation lesson
+- complete Waveforms, STFT, and Audio Patches lesson
+- complete Variable-Duration Audio and Attention lesson
+- complete Audio-Text Generation and Evaluation lesson
 - complete Variational Autoencoder lesson
 - complete Latent Dynamics lesson
 - complete MDN-RNN lesson
@@ -76,22 +79,15 @@ Completed:
 - `llm.22_video_tubelet_embeddings` — Videos as Spatiotemporal Tokens
 - `llm.23_factorized_video_attention` — Spatial and Temporal Attention
 - `llm.24_tiny_video_language_model` — Video-Text Generation and Evaluation
-
-Planned:
-
-The remaining sequence stays compact with three native audio lessons. Later
-multimodal lessons should carry forward the existing SFT, generation, and
-evaluation code instead of asking learners to reimplement those mechanics for
-every modality.
-
-Native audio:
-
 - `llm.25_audio_spectrogram_tokens` — Waveforms, STFT, and Audio Patches
 - `llm.26_audio_temporal_attention` — Variable-Duration Audio and Attention
 - `llm.27_tiny_audio_language_model` — Audio-Text Generation and Evaluation
 
-Audio lessons should generate waveforms directly with PyTorch and use
-`torch.stft`, avoiding downloaded datasets and additional audio dependencies.
+Planned:
+
+No additional language-model lesson is currently scheduled. Future multimodal
+extensions should carry forward existing SFT, generation, and evaluation code
+instead of asking learners to reimplement those mechanics for every modality.
 
 ### World models
 
@@ -182,7 +178,7 @@ Stage 3 — modern extensions:
 
 ### Language models
 
-- begin native audio with `llm.25_audio_spectrogram_tokens`
+- consolidate comparisons across native image, video, and audio lessons
 
 ### World models
 
@@ -195,7 +191,6 @@ Stage 3 — modern extensions:
 
 ### Stage 2: deepen track coverage
 
-- continue native audio with `llm.25` through `llm.27`
 - build imagined rollouts and actor-critic learning with `wm.08` through `wm.09`
 - add the reactive VLA baseline with `wm.10`
 - diffusion noise prediction, DDPM sampling, and tiny U-Net denoising

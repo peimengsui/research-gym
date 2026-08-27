@@ -586,6 +586,50 @@ research-gym/
         scripts/
           run_demo.py
 
+      25_audio_spectrogram_tokens/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        hints.md
+        review.md
+        tests/
+          test_audio_spectrogram_tokens.py
+        scripts/
+          run_demo.py
+
+      26_audio_temporal_attention/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        provided.py
+        hints.md
+        review.md
+        tests/
+          test_audio_temporal_attention.py
+        scripts/
+          run_demo.py
+
+      27_tiny_audio_language_model/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        provided.py
+        hints.md
+        review.md
+        tests/
+          test_tiny_audio_language_model.py
+        scripts/
+          run_demo.py
+
     world_models/
       01_vae/
         lesson.yaml
