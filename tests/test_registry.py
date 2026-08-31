@@ -53,6 +53,7 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
         "wm.03_mdn_rnn",
         "wm.04_world_model_loop",
         "wm.05_cem_planning",
+        "wm.06_jepa_latent_prediction",
     ]
     assert lessons[0].title == "Noise Schedules and the Forward Process"
     assert lessons[1].title == "Epsilon Prediction Objective"
@@ -95,6 +96,7 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
     assert lessons[38].title == "MDN-RNN"
     assert lessons[39].title == "World Model Loop"
     assert lessons[40].title == "CEM Planning"
+    assert lessons[41].title == "Predict Targets in Representation Space"
 
 
 def test_get_lesson_returns_requested_lesson() -> None:

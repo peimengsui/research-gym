@@ -1,0 +1,8 @@
+id: wm.06_jepa_latent_prediction
+title: Predict Targets in Representation Space
+track: world_models
+level: intermediate
+summary: Learn masked image representations with online and EMA target encoders.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py

@@ -98,10 +98,10 @@ Completed:
 - `wm.03_mdn_rnn` — MDN-RNN
 - `wm.04_world_model_loop` — World Model Loop
 - `wm.05_cem_planning` — CEM Planning
+- `wm.06_jepa_latent_prediction` — Predict Targets in Representation Space
 
 Planned:
 
-- `wm.06_jepa_latent_prediction` — Predict Targets in Representation Space
 - `wm.07_action_conditioned_jepa` — Actions and Predictive Representations
 - `wm.08_imagined_rollouts` — Latent Imagination and Lambda Returns
 - `wm.09_actor_critic_from_imagination` — Actor and Value Learning in Dreams
@@ -182,8 +182,7 @@ Stage 3 — modern extensions:
 
 ### World models
 
-- begin JEPA-style representation learning with `wm.06`
-- connect actions to predictive representations with `wm.07`
+- connect actions to the completed JEPA representation learner with `wm.07`
 
 ### Diffusion models
 

@@ -701,6 +701,21 @@ research-gym/
         scripts/
           run_demo.py
 
+      06_jepa_latent_prediction/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        provided.py
+        hints.md
+        review.md
+        tests/
+          test_jepa_latent_prediction.py
+        scripts/
+          run_demo.py
+
   tests/
     test_registry.py
     test_cli_smoke.py
