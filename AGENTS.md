@@ -731,6 +731,21 @@ research-gym/
         scripts/
           run_demo.py
 
+      08_imagined_rollouts/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        provided.py
+        hints.md
+        review.md
+        tests/
+          test_imagined_rollouts.py
+        scripts/
+          run_demo.py
+
   tests/
     test_registry.py
     test_cli_smoke.py

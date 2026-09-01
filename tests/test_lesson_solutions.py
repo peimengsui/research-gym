@@ -59,6 +59,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
         "wm.05_cem_planning",
         "wm.06_jepa_latent_prediction",
         "wm.07_action_conditioned_jepa",
+        "wm.08_imagined_rollouts",
     ],
 )
 def test_solution_passes_lesson_tests(tmp_path: Path, lesson_id: str) -> None:

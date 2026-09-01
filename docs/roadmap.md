@@ -100,10 +100,10 @@ Completed:
 - `wm.05_cem_planning` — CEM Planning
 - `wm.06_jepa_latent_prediction` — Predict Targets in Representation Space
 - `wm.07_action_conditioned_jepa` — Actions and Predictive Representations
+- `wm.08_imagined_rollouts` — Latent Imagination and Lambda Returns
 
 Planned:
 
-- `wm.08_imagined_rollouts` — Latent Imagination and Lambda Returns
 - `wm.09_actor_critic_from_imagination` — Actor and Value Learning in Dreams
 - `wm.10_tiny_vla_policy` — Vision, Language, and Action Tokens
 - `wm.11_joint_world_action_model` — Predict Futures and Actions Together
@@ -182,8 +182,8 @@ Stage 3 — modern extensions:
 
 ### World models
 
-- consolidate the comparison between representation-only `wm.06` and
-  action-conditioned `wm.07`
+- consolidate the progression from representation learning in `wm.06` through
+  action-conditioned latent imagination in `wm.08`
 
 ### Diffusion models
 
@@ -191,7 +191,7 @@ Stage 3 — modern extensions:
 
 ### Stage 2: deepen track coverage
 
-- build imagined rollouts and actor-critic learning with `wm.08` through `wm.09`
+- add actor-critic learning to the completed imagination code with `wm.09`
 - add the reactive VLA baseline with `wm.10`
 - diffusion noise prediction, DDPM sampling, and tiny U-Net denoising
 
