@@ -99,10 +99,10 @@ Completed:
 - `wm.04_world_model_loop` — World Model Loop
 - `wm.05_cem_planning` — CEM Planning
 - `wm.06_jepa_latent_prediction` — Predict Targets in Representation Space
+- `wm.07_action_conditioned_jepa` — Actions and Predictive Representations
 
 Planned:
 
-- `wm.07_action_conditioned_jepa` — Actions and Predictive Representations
 - `wm.08_imagined_rollouts` — Latent Imagination and Lambda Returns
 - `wm.09_actor_critic_from_imagination` — Actor and Value Learning in Dreams
 - `wm.10_tiny_vla_policy` — Vision, Language, and Action Tokens
@@ -182,7 +182,8 @@ Stage 3 — modern extensions:
 
 ### World models
 
-- connect actions to the completed JEPA representation learner with `wm.07`
+- consolidate the comparison between representation-only `wm.06` and
+  action-conditioned `wm.07`
 
 ### Diffusion models
 

@@ -1,0 +1,8 @@
+id: wm.07_action_conditioned_jepa
+title: Actions and Predictive Representations
+track: world_models
+level: intermediate
+summary: Predict and plan latent state transitions conditioned on actions.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py
