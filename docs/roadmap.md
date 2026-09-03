@@ -101,10 +101,10 @@ Completed:
 - `wm.06_jepa_latent_prediction` — Predict Targets in Representation Space
 - `wm.07_action_conditioned_jepa` — Actions and Predictive Representations
 - `wm.08_imagined_rollouts` — Latent Imagination and Lambda Returns
+- `wm.09_actor_critic_from_imagination` — Actor and Value Learning in Dreams
 
 Planned:
 
-- `wm.09_actor_critic_from_imagination` — Actor and Value Learning in Dreams
 - `wm.10_tiny_vla_policy` — Vision, Language, and Action Tokens
 - `wm.11_joint_world_action_model` — Predict Futures and Actions Together
 - `wm.12_wam_imagine_then_act` — Receding-Horizon Planning with a WAM
@@ -191,7 +191,8 @@ Stage 3 — modern extensions:
 
 ### Stage 2: deepen track coverage
 
-- add actor-critic learning to the completed imagination code with `wm.09`
+- consolidate the completed latent-imagination actor-critic sequence through
+  `wm.09`
 - add the reactive VLA baseline with `wm.10`
 - diffusion noise prediction, DDPM sampling, and tiny U-Net denoising
 

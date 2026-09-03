@@ -1,0 +1,8 @@
+id: wm.09_actor_critic_from_imagination
+title: Actor and Value Learning in Dreams
+track: world_models
+level: intermediate
+summary: Train actor and value networks from differentiable imagined latent returns.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py

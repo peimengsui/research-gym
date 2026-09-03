@@ -56,6 +56,7 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
         "wm.06_jepa_latent_prediction",
         "wm.07_action_conditioned_jepa",
         "wm.08_imagined_rollouts",
+        "wm.09_actor_critic_from_imagination",
     ]
     assert lessons[0].title == "Noise Schedules and the Forward Process"
     assert lessons[1].title == "Epsilon Prediction Objective"
@@ -101,6 +102,7 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
     assert lessons[41].title == "Predict Targets in Representation Space"
     assert lessons[42].title == "Actions and Predictive Representations"
     assert lessons[43].title == "Latent Imagination and Lambda Returns"
+    assert lessons[44].title == "Actor and Value Learning in Dreams"
 
 
 def test_get_lesson_returns_requested_lesson() -> None:
