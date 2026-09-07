@@ -761,6 +761,21 @@ research-gym/
         scripts/
           run_demo.py
 
+      10_tiny_vla_policy/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        provided.py
+        hints.md
+        review.md
+        tests/
+          test_tiny_vla_policy.py
+        scripts/
+          run_demo.py
+
   tests/
     test_registry.py
     test_cli_smoke.py
