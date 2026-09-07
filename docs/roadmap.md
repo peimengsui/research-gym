@@ -85,8 +85,39 @@ Completed:
 
 Planned:
 
-No additional language-model lesson is currently scheduled. Future multimodal
-extensions should carry forward existing SFT, generation, and evaluation code
+- `llm.28_rotary_position_embeddings` — Rotary Position Embeddings and Cache Offsets
+- `llm.29_grouped_query_attention` — Shared Key-Value Heads and Smaller Caches
+- `llm.30_causal_linear_attention` — Kernel Attention as a Recurrent State
+- `llm.31_rl_rollouts_and_advantages` — Token Rewards and Advantage Estimation
+- `llm.32_ppo` — Clipped Policy and Value Updates
+- `llm.33_grpo` — Group-Relative Policy Optimization
+
+The attention lessons should form a controlled progression over the existing
+causal-attention and KV-cache code:
+
+- `llm.28` rotates query and key pairs, preserves vector norms, and handles
+  nonzero position offsets during cached decoding.
+- `llm.29` gives query heads fewer shared key/value heads, checks equivalence to
+  multi-head attention in the degenerate case, and measures KV-cache reduction.
+- `llm.30` implements one specific form of causal kernelized linear attention,
+  including its parallel formulation and recurrent prefix state. It should be
+  explicit that this changes the attention rule rather than computing exact
+  softmax attention more efficiently.
+
+The reinforcement-learning lessons should use tiny generated responses and a
+provided deterministic reward so the exercises stay reproducible and do not
+require a learned reward model:
+
+- `llm.31` collects response-only masks, old-policy and reference log
+  probabilities, token-level KL-shaped rewards, returns, and advantages.
+- `llm.32` carries those frozen rollouts forward and focuses on probability
+  ratios, clipping, value regression, entropy, and repeated minibatch updates.
+- `llm.33` samples several responses per prompt and replaces the learned value
+  baseline with normalized group-relative rewards for a direct PPO comparison.
+
+An explicit preference-trained reward-model lesson remains an optional later
+extension for completing the classic RLHF pipeline. Future modality lessons
+should continue carrying forward existing SFT, generation, and evaluation code
 instead of asking learners to reimplement those mechanics for every modality.
 
 ### World models
@@ -103,10 +134,10 @@ Completed:
 - `wm.08_imagined_rollouts` — Latent Imagination and Lambda Returns
 - `wm.09_actor_critic_from_imagination` — Actor and Value Learning in Dreams
 - `wm.10_tiny_vla_policy` — Vision, Language, and Action Chunks
+- `wm.11_joint_world_action_model` — Predict Futures and Actions Together
 
 Planned:
 
-- `wm.11_joint_world_action_model` — Predict Futures and Actions Together
 - `wm.12_wam_imagine_then_act` — Receding-Horizon Planning with a WAM
 - `wm.13_stochastic_world_action_model` — Multiple Futures and Action Strategies
 - `wm.14_uncertainty_aware_planning` — Model Disagreement and Safer Plans
@@ -178,6 +209,7 @@ Stage 3 — modern extensions:
 
 ### Language models
 
+- add modern attention mechanics with `llm.28` through `llm.30`
 - consolidate comparisons across native image, video, and audio lessons
 
 ### World models
@@ -191,9 +223,11 @@ Stage 3 — modern extensions:
 
 ### Stage 2: deepen track coverage
 
+- connect rollout bookkeeping, PPO, and GRPO with `llm.31` through `llm.33`
 - consolidate the completed latent-imagination actor-critic sequence through
   `wm.09`
 - consolidate the reactive VLA baseline in `wm.10`
+- add joint action and next-latent prediction with `wm.11`
 - diffusion noise prediction, DDPM sampling, and tiny U-Net denoising
 
 ### Stage 3: connect to broader research patterns

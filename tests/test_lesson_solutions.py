@@ -62,6 +62,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
         "wm.08_imagined_rollouts",
         "wm.09_actor_critic_from_imagination",
         "wm.10_tiny_vla_policy",
+        "wm.11_joint_world_action_model",
     ],
 )
 def test_solution_passes_lesson_tests(tmp_path: Path, lesson_id: str) -> None:

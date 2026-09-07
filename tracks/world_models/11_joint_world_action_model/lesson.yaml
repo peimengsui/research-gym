@@ -1,0 +1,8 @@
+id: wm.11_joint_world_action_model
+title: Predict Futures and Actions Together
+track: world_models
+level: intermediate
+summary: Train a tiny latent world-action model with action and next-state objectives.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py
