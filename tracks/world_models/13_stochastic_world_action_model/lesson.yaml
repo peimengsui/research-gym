@@ -1,0 +1,8 @@
+id: wm.13_stochastic_world_action_model
+title: Multiple Futures and Action Strategies
+track: world_models
+level: intermediate
+summary: Represent and sample coherent action/future hypotheses with a joint mixture model.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py

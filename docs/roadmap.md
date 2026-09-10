@@ -135,11 +135,11 @@ Completed:
 - `wm.09_actor_critic_from_imagination` — Actor and Value Learning in Dreams
 - `wm.10_tiny_vla_policy` — Vision, Language, and Action Chunks
 - `wm.11_joint_world_action_model` — Predict Futures and Actions Together
+- `wm.12_wam_imagine_then_act` — Receding-Horizon Planning with a WAM
+- `wm.13_stochastic_world_action_model` — Multiple Futures and Action Strategies
 
 Planned:
 
-- `wm.12_wam_imagine_then_act` — Receding-Horizon Planning with a WAM
-- `wm.13_stochastic_world_action_model` — Multiple Futures and Action Strategies
 - `wm.14_uncertainty_aware_planning` — Model Disagreement and Safer Plans
 
 The lessons should form one controlled comparison using tiny synthetic
@@ -199,9 +199,58 @@ Completed:
 
 Remaining plan:
 
-Stage 3 — modern extensions:
+Stage 1 — modern denoising foundations:
 
-- `diffusion.10_consistency_models` — One/Few-Step Consistency Models
+- `diffusion.10_prediction_parameterizations` — Epsilon, Clean-Sample, and Velocity Prediction
+- `diffusion.11_tiny_diffusion_transformer` — Denoising Latent Patches with a Transformer
+
+Stage 2 — discrete text diffusion:
+
+- `diffusion.12_masked_discrete_diffusion` — Absorbing-Mask Corruption for Tokens
+- `diffusion.13_tiny_diffusion_language_model` — Generate Text by Iterative Unmasking
+
+Stage 3 — video diffusion:
+
+- `diffusion.14_spatiotemporal_denoiser` — Couple Spatial and Temporal Denoising
+- `diffusion.15_tiny_video_diffusion` — Generate Tiny Moving-Dot Videos
+- `diffusion.16_conditioned_video_diffusion` — First-Frame and Text-Guided Video
+
+Stage 4 — fast generation:
+
+- `diffusion.17_consistency_models` — One/Few-Step Consistency Models
+
+The intended scope boundaries are:
+
+- `diffusion.10` converts among epsilon, clean-sample, and velocity targets,
+  derives signal-to-noise ratio by timestep, and compares weighted losses. It
+  should remain a tensor exercise rather than another image model.
+- `diffusion.11` replaces the U-Net with a tiny transformer over latent patches.
+  It focuses on patchification, timestep conditioning, transformer blocks, and
+  unpatchification without reproducing a production-scale DiT.
+- `diffusion.12` is the discrete counterpart of the forward-process lesson. It
+  implements an absorbing mask token, a masking schedule, direct corruption,
+  and loss masks while leaving the denoising network for the next lesson.
+- `diffusion.13` carries the discrete process forward into a bidirectional token
+  denoiser and iterative confidence-based unmasking. Padding, special tokens,
+  and already-fixed tokens must remain unchanged.
+- `diffusion.14` introduces `[batch, channels, frames, height, width]` tensors,
+  reuses provided spatial blocks, and adds temporal mixing. It tests temporal
+  coupling without training a complete video generator.
+- `diffusion.15` carries that denoiser into a DDPM or DDIM loop over synthetic
+  four-frame moving-dot clips and uses small motion-continuity checks instead of
+  heavyweight perceptual metrics.
+- `diffusion.16` adds a preserved first-frame condition and tiny text motion
+  instructions, reusing existing cross-attention and classifier-free-guidance
+  mechanics instead of asking learners to implement them again.
+- `diffusion.17` returns to sampling efficiency after the image, text, and video
+  mechanics are established. It remains a tiny one/few-step consistency
+  exercise rather than a large distillation pipeline.
+
+Text diffusion here means generating discrete text tokens. Text-conditioned
+visual generation is already introduced by `diffusion.06` and `diffusion.08`.
+The video lessons should stay in pixel space or use a provided deterministic
+compressor; learned video autoencoders, cascaded super-resolution, FID/FVD,
+downloaded video datasets, and long training runs remain out of scope.
 
 ## Implementation stages
 
@@ -219,7 +268,8 @@ Stage 3 — modern extensions:
 
 ### Diffusion models
 
-- continue with `diffusion.10_consistency_models`
+- add prediction parameterizations and a tiny DiT with `diffusion.10` and
+  `diffusion.11`
 
 ### Stage 2: deepen track coverage
 
@@ -228,14 +278,17 @@ Stage 3 — modern extensions:
   `wm.09`
 - consolidate the reactive VLA baseline in `wm.10`
 - add joint action and next-latent prediction with `wm.11`
-- diffusion noise prediction, DDPM sampling, and tiny U-Net denoising
+- add receding-horizon WAM planning with `wm.12`
+- introduce discrete text diffusion with `diffusion.12` and `diffusion.13`
 
 ### Stage 3: connect to broader research patterns
 
 - compare inference and modality behavior through richer reports
 - connect future prediction and action generation with `wm.11` through `wm.13`
 - add uncertainty-aware WAM planning with `wm.14`
-- tiny diffusion image lab
+- extend diffusion through video tensors and conditioning with `diffusion.14`
+  through `diffusion.16`
+- revisit fast sampling with consistency models in `diffusion.17`
 - lesson authoring validation and contribution templates
 - richer reports that summarize tests, demos, and learner reflection
 

@@ -791,6 +791,36 @@ research-gym/
         scripts/
           run_demo.py
 
+      12_wam_imagine_then_act/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        provided.py
+        hints.md
+        review.md
+        tests/
+          test_wam_imagine_then_act.py
+        scripts/
+          run_demo.py
+
+      13_stochastic_world_action_model/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        provided.py
+        hints.md
+        review.md
+        tests/
+          test_stochastic_world_action_model.py
+        scripts/
+          run_demo.py
+
   tests/
     test_registry.py
     test_cli_smoke.py
