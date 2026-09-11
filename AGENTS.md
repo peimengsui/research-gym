@@ -821,6 +821,21 @@ research-gym/
         scripts/
           run_demo.py
 
+      14_uncertainty_aware_planning/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        provided.py
+        hints.md
+        review.md
+        tests/
+          test_uncertainty_aware_planning.py
+        scripts/
+          run_demo.py
+
   tests/
     test_registry.py
     test_cli_smoke.py

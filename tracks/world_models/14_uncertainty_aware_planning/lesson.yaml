@@ -1,0 +1,8 @@
+id: wm.14_uncertainty_aware_planning
+title: Model Disagreement and Safer Plans
+track: world_models
+level: intermediate
+summary: Separate multimodal outcome spread from ensemble disagreement and penalize epistemic planning risk.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py

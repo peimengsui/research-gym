@@ -65,6 +65,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
         "wm.11_joint_world_action_model",
         "wm.12_wam_imagine_then_act",
         "wm.13_stochastic_world_action_model",
+        "wm.14_uncertainty_aware_planning",
     ],
 )
 def test_solution_passes_lesson_tests(tmp_path: Path, lesson_id: str) -> None:

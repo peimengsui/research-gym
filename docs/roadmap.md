@@ -137,10 +137,9 @@ Completed:
 - `wm.11_joint_world_action_model` — Predict Futures and Actions Together
 - `wm.12_wam_imagine_then_act` — Receding-Horizon Planning with a WAM
 - `wm.13_stochastic_world_action_model` — Multiple Futures and Action Strategies
-
-Planned:
-
 - `wm.14_uncertainty_aware_planning` — Model Disagreement and Safer Plans
+
+All currently planned world-model lessons are implemented.
 
 The lessons should form one controlled comparison using tiny synthetic
 trajectories, moving shapes, language goals, and discrete or two-dimensional

@@ -61,6 +61,7 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
         "wm.11_joint_world_action_model",
         "wm.12_wam_imagine_then_act",
         "wm.13_stochastic_world_action_model",
+        "wm.14_uncertainty_aware_planning",
     ]
     assert lessons[0].title == "Noise Schedules and the Forward Process"
     assert lessons[1].title == "Epsilon Prediction Objective"
@@ -111,6 +112,7 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
     assert lessons[46].title == "Predict Futures and Actions Together"
     assert lessons[47].title == "Receding-Horizon Planning with a WAM"
     assert lessons[48].title == "Multiple Futures and Action Strategies"
+    assert lessons[49].title == "Model Disagreement and Safer Plans"
 
 
 def test_get_lesson_returns_requested_lesson() -> None:
