@@ -660,6 +660,21 @@ research-gym/
         scripts/
           run_demo.py
 
+      30_gated_linear_attention/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        provided.py
+        hints.md
+        review.md
+        tests/
+          test_gated_linear_attention.py
+        scripts/
+          run_demo.py
+
     world_models/
       01_vae/
         lesson.yaml

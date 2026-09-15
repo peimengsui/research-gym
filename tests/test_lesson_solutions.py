@@ -54,6 +54,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
         "llm.27_tiny_audio_language_model",
         "llm.28_rotary_position_embeddings",
         "llm.29_grouped_query_attention",
+        "llm.30_gated_linear_attention",
         "wm.01_vae",
         "wm.02_latent_dynamics",
         "wm.03_mdn_rnn",

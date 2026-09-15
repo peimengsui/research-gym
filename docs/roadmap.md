@@ -37,6 +37,7 @@ and code-level fluency. Ordering is directional rather than a release promise.
 - complete Audio-Text Generation and Evaluation lesson
 - complete Rotary Position Embeddings and Cache Offsets lesson
 - complete Shared Key-Value Heads and Smaller Caches lesson
+- complete Gated Linear Attention and Selective Memory lesson
 - complete Variational Autoencoder lesson
 - complete Latent Dynamics lesson
 - complete MDN-RNN lesson
@@ -86,10 +87,10 @@ Completed:
 - `llm.27_tiny_audio_language_model` — Audio-Text Generation and Evaluation
 - `llm.28_rotary_position_embeddings` — Rotary Position Embeddings and Cache Offsets
 - `llm.29_grouped_query_attention` — Shared Key-Value Heads and Smaller Caches
+- `llm.30_gated_linear_attention` — Gated Linear Attention and Selective Memory
 
 Planned:
 
-- `llm.30_causal_linear_attention` — Kernel Attention as a Recurrent State
 - `llm.31_rl_rollouts_and_advantages` — Token Rewards and Advantage Estimation
 - `llm.32_ppo` — Clipped Policy and Value Updates
 - `llm.33_grpo` — Group-Relative Policy Optimization
@@ -101,10 +102,10 @@ causal-attention and KV-cache code:
   nonzero position offsets during cached decoding.
 - `llm.29` gives query heads fewer shared key/value heads, checks equivalence to
   multi-head attention in the degenerate case, and measures KV-cache reduction.
-- `llm.30` implements one specific form of causal kernelized linear attention,
-  including its parallel formulation and recurrent prefix state. It should be
-  explicit that this changes the attention rule rather than computing exact
-  softmax attention more efficiently.
+- `llm.30` implements the practical key-gated GLA recurrence with low-rank,
+  data-dependent forget gates, fixed-size matrix memory, an equivalent explicit
+  parallel oracle, per-head normalization, and output gating. It distinguishes
+  those learning mechanics from the production chunkwise GPU kernels.
 
 The reinforcement-learning lessons should use tiny generated responses and a
 provided deterministic reward so the exercises stay reproducible and do not
@@ -259,7 +260,7 @@ downloaded video datasets, and long training runs remain out of scope.
 
 ### Language models
 
-- complete modern attention mechanics with `llm.30`
+- consolidate comparisons across RoPE, grouped-query, and gated linear attention
 - consolidate comparisons across native image, video, and audio lessons
 
 ### World models
