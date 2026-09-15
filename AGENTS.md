@@ -630,6 +630,36 @@ research-gym/
         scripts/
           run_demo.py
 
+      28_rotary_position_embeddings/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        provided.py
+        hints.md
+        review.md
+        tests/
+          test_rotary_position_embeddings.py
+        scripts/
+          run_demo.py
+
+      29_grouped_query_attention/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        provided.py
+        hints.md
+        review.md
+        tests/
+          test_grouped_query_attention.py
+        scripts/
+          run_demo.py
+
     world_models/
       01_vae/
         lesson.yaml

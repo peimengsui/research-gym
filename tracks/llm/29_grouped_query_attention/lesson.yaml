@@ -1,0 +1,8 @@
+id: llm.29_grouped_query_attention
+title: Shared Key-Value Heads and Smaller Caches
+track: llm
+level: intermediate
+summary: Share key-value heads across query groups while preserving multi-head outputs and compact KV caches.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py

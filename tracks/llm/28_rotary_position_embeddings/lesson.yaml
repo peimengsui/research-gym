@@ -1,0 +1,8 @@
+id: llm.28_rotary_position_embeddings
+title: Rotary Position Embeddings and Cache Offsets
+track: llm
+level: intermediate
+summary: Rotate query and key pairs by position and preserve absolute offsets during cached decoding.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py

@@ -35,6 +35,8 @@ and code-level fluency. Ordering is directional rather than a release promise.
 - complete Waveforms, STFT, and Audio Patches lesson
 - complete Variable-Duration Audio and Attention lesson
 - complete Audio-Text Generation and Evaluation lesson
+- complete Rotary Position Embeddings and Cache Offsets lesson
+- complete Shared Key-Value Heads and Smaller Caches lesson
 - complete Variational Autoencoder lesson
 - complete Latent Dynamics lesson
 - complete MDN-RNN lesson
@@ -82,11 +84,11 @@ Completed:
 - `llm.25_audio_spectrogram_tokens` — Waveforms, STFT, and Audio Patches
 - `llm.26_audio_temporal_attention` — Variable-Duration Audio and Attention
 - `llm.27_tiny_audio_language_model` — Audio-Text Generation and Evaluation
+- `llm.28_rotary_position_embeddings` — Rotary Position Embeddings and Cache Offsets
+- `llm.29_grouped_query_attention` — Shared Key-Value Heads and Smaller Caches
 
 Planned:
 
-- `llm.28_rotary_position_embeddings` — Rotary Position Embeddings and Cache Offsets
-- `llm.29_grouped_query_attention` — Shared Key-Value Heads and Smaller Caches
 - `llm.30_causal_linear_attention` — Kernel Attention as a Recurrent State
 - `llm.31_rl_rollouts_and_advantages` — Token Rewards and Advantage Estimation
 - `llm.32_ppo` — Clipped Policy and Value Updates
@@ -257,7 +259,7 @@ downloaded video datasets, and long training runs remain out of scope.
 
 ### Language models
 
-- add modern attention mechanics with `llm.28` through `llm.30`
+- complete modern attention mechanics with `llm.30`
 - consolidate comparisons across native image, video, and audio lessons
 
 ### World models
