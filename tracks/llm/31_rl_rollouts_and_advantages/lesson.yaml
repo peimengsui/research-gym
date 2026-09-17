@@ -1,0 +1,8 @@
+id: llm.31_rl_rollouts_and_advantages
+title: Token Rewards and Advantage Estimation
+track: llm
+level: intermediate
+summary: Turn generated responses into frozen RL rollouts with KL-shaped rewards, returns, and advantages.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py

@@ -38,6 +38,7 @@ and code-level fluency. Ordering is directional rather than a release promise.
 - complete Rotary Position Embeddings and Cache Offsets lesson
 - complete Shared Key-Value Heads and Smaller Caches lesson
 - complete Gated Linear Attention and Selective Memory lesson
+- complete Token Rewards and Advantage Estimation lesson
 - complete Variational Autoencoder lesson
 - complete Latent Dynamics lesson
 - complete MDN-RNN lesson
@@ -88,10 +89,10 @@ Completed:
 - `llm.28_rotary_position_embeddings` — Rotary Position Embeddings and Cache Offsets
 - `llm.29_grouped_query_attention` — Shared Key-Value Heads and Smaller Caches
 - `llm.30_gated_linear_attention` — Gated Linear Attention and Selective Memory
+- `llm.31_rl_rollouts_and_advantages` — Token Rewards and Advantage Estimation
 
 Planned:
 
-- `llm.31_rl_rollouts_and_advantages` — Token Rewards and Advantage Estimation
 - `llm.32_ppo` — Clipped Policy and Value Updates
 - `llm.33_grpo` — Group-Relative Policy Optimization
 

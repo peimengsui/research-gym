@@ -675,6 +675,21 @@ research-gym/
         scripts/
           run_demo.py
 
+      31_rl_rollouts_and_advantages/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        provided.py
+        hints.md
+        review.md
+        tests/
+          test_rl_rollouts_and_advantages.py
+        scripts/
+          run_demo.py
+
     world_models/
       01_vae/
         lesson.yaml
