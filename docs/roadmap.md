@@ -39,6 +39,7 @@ and code-level fluency. Ordering is directional rather than a release promise.
 - complete Shared Key-Value Heads and Smaller Caches lesson
 - complete Gated Linear Attention and Selective Memory lesson
 - complete Token Rewards and Advantage Estimation lesson
+- complete Clipped Policy and Value Updates lesson
 - complete Variational Autoencoder lesson
 - complete Latent Dynamics lesson
 - complete MDN-RNN lesson
@@ -90,10 +91,10 @@ Completed:
 - `llm.29_grouped_query_attention` — Shared Key-Value Heads and Smaller Caches
 - `llm.30_gated_linear_attention` — Gated Linear Attention and Selective Memory
 - `llm.31_rl_rollouts_and_advantages` — Token Rewards and Advantage Estimation
+- `llm.32_ppo` — Clipped Policy and Value Updates
 
 Planned:
 
-- `llm.32_ppo` — Clipped Policy and Value Updates
 - `llm.33_grpo` — Group-Relative Policy Optimization
 
 The attention lessons should form a controlled progression over the existing

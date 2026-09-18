@@ -690,6 +690,21 @@ research-gym/
         scripts/
           run_demo.py
 
+      32_ppo/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        provided.py
+        hints.md
+        review.md
+        tests/
+          test_ppo.py
+        scripts/
+          run_demo.py
+
     world_models/
       01_vae/
         lesson.yaml

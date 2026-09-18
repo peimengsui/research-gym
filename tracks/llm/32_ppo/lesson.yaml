@@ -1,0 +1,8 @@
+id: llm.32_ppo
+title: Clipped Policy and Value Updates
+track: llm
+level: intermediate
+summary: Optimize a language-model actor-critic with PPO ratios, clipping, value regression, entropy, and repeated minibatches.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py
