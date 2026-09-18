@@ -53,6 +53,7 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
         "llm.30_gated_linear_attention",
         "llm.31_rl_rollouts_and_advantages",
         "llm.32_ppo",
+        "llm.33_grpo",
         "wm.01_vae",
         "wm.02_latent_dynamics",
         "wm.03_mdn_rnn",
@@ -109,20 +110,21 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
     assert lessons[38].title == "Gated Linear Attention and Selective Memory"
     assert lessons[39].title == "Token Rewards and Advantage Estimation"
     assert lessons[40].title == "Clipped Policy and Value Updates"
-    assert lessons[41].title == "Variational Autoencoder"
-    assert lessons[42].title == "Latent Dynamics"
-    assert lessons[43].title == "MDN-RNN"
-    assert lessons[44].title == "World Model Loop"
-    assert lessons[45].title == "CEM Planning"
-    assert lessons[46].title == "Predict Targets in Representation Space"
-    assert lessons[47].title == "Actions and Predictive Representations"
-    assert lessons[48].title == "Latent Imagination and Lambda Returns"
-    assert lessons[49].title == "Actor and Value Learning in Dreams"
-    assert lessons[50].title == "Vision, Language, and Action Chunks"
-    assert lessons[51].title == "Predict Futures and Actions Together"
-    assert lessons[52].title == "Receding-Horizon Planning with a WAM"
-    assert lessons[53].title == "Multiple Futures and Action Strategies"
-    assert lessons[54].title == "Model Disagreement and Safer Plans"
+    assert lessons[41].title == "Group-Relative Policy Optimization"
+    assert lessons[42].title == "Variational Autoencoder"
+    assert lessons[43].title == "Latent Dynamics"
+    assert lessons[44].title == "MDN-RNN"
+    assert lessons[45].title == "World Model Loop"
+    assert lessons[46].title == "CEM Planning"
+    assert lessons[47].title == "Predict Targets in Representation Space"
+    assert lessons[48].title == "Actions and Predictive Representations"
+    assert lessons[49].title == "Latent Imagination and Lambda Returns"
+    assert lessons[50].title == "Actor and Value Learning in Dreams"
+    assert lessons[51].title == "Vision, Language, and Action Chunks"
+    assert lessons[52].title == "Predict Futures and Actions Together"
+    assert lessons[53].title == "Receding-Horizon Planning with a WAM"
+    assert lessons[54].title == "Multiple Futures and Action Strategies"
+    assert lessons[55].title == "Model Disagreement and Safer Plans"
 
 
 def test_get_lesson_returns_requested_lesson() -> None:

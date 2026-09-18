@@ -57,6 +57,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
         "llm.30_gated_linear_attention",
         "llm.31_rl_rollouts_and_advantages",
         "llm.32_ppo",
+        "llm.33_grpo",
         "wm.01_vae",
         "wm.02_latent_dynamics",
         "wm.03_mdn_rnn",
