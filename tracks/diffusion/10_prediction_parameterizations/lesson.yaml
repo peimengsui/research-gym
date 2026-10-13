@@ -1,0 +1,8 @@
+id: diffusion.10_prediction_parameterizations
+title: Epsilon, Clean-Sample, and Velocity Prediction
+track: diffusion
+level: intermediate
+summary: Convert between epsilon, clean-sample, and velocity targets and compare their timestep-dependent Min-SNR loss weights.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py

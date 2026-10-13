@@ -51,6 +51,12 @@ and code-level fluency. Ordering is directional rather than a release promise.
 - complete Reverse DDPM Sampling lesson
 - complete Tiny U-Net Denoiser lesson
 - complete Deterministic DDIM Sampling lesson
+- complete Classifier-Free Guidance lesson
+- complete Latent Diffusion lesson
+- complete Cross-Attention Conditioning lesson
+- complete Flow Matching and ODE Sampling lesson
+- complete Epsilon, Clean-Sample, and Velocity Prediction lesson
+- complete Tiny Diffusion Transformer lesson
 
 ## Track roadmaps
 
@@ -200,13 +206,10 @@ Completed:
 - `diffusion.07_latent_diffusion` — Diffusion in a Learned Latent Space
 - `diffusion.08_cross_attention_conditioning` — Prompt-Style Conditioning
 - `diffusion.09_flow_matching` — Flow Matching and ODE Sampling
-
-Remaining plan:
-
-Stage 1 — modern denoising foundations:
-
 - `diffusion.10_prediction_parameterizations` — Epsilon, Clean-Sample, and Velocity Prediction
 - `diffusion.11_tiny_diffusion_transformer` — Denoising Latent Patches with a Transformer
+
+Remaining plan:
 
 Stage 2 — discrete text diffusion:
 
@@ -272,8 +275,8 @@ downloaded video datasets, and long training runs remain out of scope.
 
 ### Diffusion models
 
-- add prediction parameterizations and a tiny DiT with `diffusion.10` and
-  `diffusion.11`
+- consolidate prediction parameterizations and the tiny DiT from
+  `diffusion.10` and `diffusion.11`
 
 ### Stage 2: deepen track coverage
 

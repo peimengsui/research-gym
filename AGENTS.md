@@ -239,6 +239,36 @@ research-gym/
         scripts/
           run_demo.py
 
+      10_prediction_parameterizations/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        provided.py
+        hints.md
+        review.md
+        tests/
+          test_prediction_parameterizations.py
+        scripts/
+          run_demo.py
+
+      11_tiny_diffusion_transformer/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        provided.py
+        hints.md
+        review.md
+        tests/
+          test_tiny_diffusion_transformer.py
+        scripts/
+          run_demo.py
+
     llm/
       01_bigram_lm/
         lesson.yaml

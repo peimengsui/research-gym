@@ -1,0 +1,8 @@
+id: diffusion.11_tiny_diffusion_transformer
+title: Tiny Diffusion Transformer
+track: diffusion
+level: intermediate
+summary: Patchify noisy latent grids, condition transformer blocks on timesteps, and reconstruct a denoising prediction.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py
