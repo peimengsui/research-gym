@@ -64,16 +64,28 @@ class TinyDiTBlock(nn.Module):
         )
         self.conditioning_projection = nn.Linear(embedding_dim, 6 * embedding_dim)
 
+    @staticmethod
+    def _modulate(
+        normalized_tokens: torch.Tensor,
+        shift: torch.Tensor,
+        scale: torch.Tensor,
+    ) -> torch.Tensor:
+        """Apply adaptive scale and shift to [B, N, D] token features."""
+
+        # TODO 3: add a token dimension to [B, D] shift and scale, then return
+        # normalized_tokens * (1 + scale) + shift with shape [B, N, D].
+        raise NotImplementedError("TODO: modulate normalized token features")
+
     def forward(
         self,
         tokens: torch.Tensor,
         conditioning: torch.Tensor,
     ) -> torch.Tensor:
         validate_block_inputs(tokens, conditioning, self.embedding_dim)
-        # TODO 3:
+        # TODO 4:
         # 1. Split conditioning_projection(conditioning) into attention
         #    shift/scale/gate and MLP shift/scale/gate.
-        # 2. Modulate norm1(tokens) as h * (1 + scale[:, None]) + shift[:, None].
+        # 2. Modulate norm1(tokens) with _modulate.
         # 3. Run self-attention and add gate[:, None] * attention_output.
         # 4. Repeat modulation, MLP, gating, and residual addition with norm2.
         raise NotImplementedError("TODO: implement the adaptive DiT block")
@@ -131,7 +143,7 @@ class TinyDiffusionTransformer(nn.Module):
             self.channels,
             self.image_size,
         )
-        # TODO 4:
+        # TODO 5:
         # 1. Patchify and project each patch, then add position_embedding.
         # 2. Build sinusoidal timestep vectors of embedding_dim, cast them to
         #    the token dtype/device, and pass them through time_mlp.
@@ -152,6 +164,6 @@ def diffusion_transformer_loss(
 ) -> torch.Tensor:
     """Return MSE between the DiT prediction and a carried-over target."""
 
-    # TODO 5: create a provided denoising batch, call the model with its noisy
+    # TODO 6: create a provided denoising batch, call the model with its noisy
     # samples and timesteps, then return mean-squared error against its targets.
     raise NotImplementedError("TODO: compute the DiT denoising loss")

@@ -57,6 +57,7 @@ and code-level fluency. Ordering is directional rather than a release promise.
 - complete Flow Matching and ODE Sampling lesson
 - complete Epsilon, Clean-Sample, and Velocity Prediction lesson
 - complete Tiny Diffusion Transformer lesson
+- complete Absorbing-Mask Corruption for Tokens lesson
 
 ## Track roadmaps
 
@@ -208,12 +209,12 @@ Completed:
 - `diffusion.09_flow_matching` — Flow Matching and ODE Sampling
 - `diffusion.10_prediction_parameterizations` — Epsilon, Clean-Sample, and Velocity Prediction
 - `diffusion.11_tiny_diffusion_transformer` — Denoising Latent Patches with a Transformer
+- `diffusion.12_masked_discrete_diffusion` — Absorbing-Mask Corruption for Tokens
 
 Remaining plan:
 
 Stage 2 — discrete text diffusion:
 
-- `diffusion.12_masked_discrete_diffusion` — Absorbing-Mask Corruption for Tokens
 - `diffusion.13_tiny_diffusion_language_model` — Generate Text by Iterative Unmasking
 
 Stage 3 — video diffusion:
@@ -286,7 +287,8 @@ downloaded video datasets, and long training runs remain out of scope.
 - consolidate the reactive VLA baseline in `wm.10`
 - add joint action and next-latent prediction with `wm.11`
 - add receding-horizon WAM planning with `wm.12`
-- introduce discrete text diffusion with `diffusion.12` and `diffusion.13`
+- carry the masked-token forward process from `diffusion.12` into the
+  bidirectional denoiser and sampler in `diffusion.13`
 
 ### Stage 3: connect to broader research patterns
 

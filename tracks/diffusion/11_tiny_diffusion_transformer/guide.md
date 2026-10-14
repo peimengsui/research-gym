@@ -1,6 +1,6 @@
 # Implementation guide
 
-Open `implementation.py` and complete the five TODOs. The forward diffusion
+Open `implementation.py` and complete the six TODOs. The forward diffusion
 process and parameterization targets are supplied from earlier lessons.
 
 ## 1. Patchify latent grids
@@ -21,7 +21,20 @@ Use the explicit channel, height, width, and patch-size arguments to recover
 the grid dimensions. Reshape to `[B, grid_h, grid_w, C, P, P]`, reverse the
 permutation, and merge grid cells with within-patch pixels.
 
-## 3. Condition a transformer block
+## 3. Implement adaptive modulation
+
+`normalized_tokens` has shape `[batch, patches, embedding_dim]`, while `shift`
+and `scale` each have shape `[batch, embedding_dim]`. Add a singleton patch
+dimension to the latter two and return:
+
+```text
+normalized_tokens * (1 + scale[:, None, :]) + shift[:, None, :]
+```
+
+Keeping this operation in `_modulate` makes the two conditioned residual
+branches easier to compare.
+
+## 4. Condition a transformer block
 
 Project each timestep-conditioning vector to six vectors and use `chunk` along
 the feature dimension. For each branch:
@@ -36,14 +49,14 @@ the feature dimension. For each branch:
 value. Set `need_weights=False` because the lesson does not consume attention
 maps.
 
-## 4. Assemble the tiny DiT
+## 5. Assemble the tiny DiT
 
 Patchify, linearly embed patches, and add the parameter named exactly
 `position_embedding`. Embed timesteps with the provided sinusoidal helper and
 the supplied MLP. Run every block, apply final normalization and projection,
 then unpatchify.
 
-## 5. Compute denoising loss
+## 6. Compute denoising loss
 
 Use `make_denoising_batch` to obtain noisy inputs and the selected epsilon,
 sample, or velocity target. Call the model and return scalar MSE.

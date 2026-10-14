@@ -269,6 +269,21 @@ research-gym/
         scripts/
           run_demo.py
 
+      12_masked_discrete_diffusion/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        provided.py
+        hints.md
+        review.md
+        tests/
+          test_masked_discrete_diffusion.py
+        scripts/
+          run_demo.py
+
     llm/
       01_bigram_lm/
         lesson.yaml

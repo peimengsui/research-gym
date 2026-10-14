@@ -40,6 +40,17 @@ def test_unpatchify_exactly_inverts_rectangular_multichannel_input() -> None:
     assert torch.equal(reconstructed, samples)
 
 
+def test_modulation_broadcasts_scale_and_shift_over_patch_tokens() -> None:
+    normalized_tokens = torch.tensor([[[1.0, 2.0], [3.0, 4.0]]])
+    shift = torch.tensor([[10.0, 20.0]])
+    scale = torch.tensor([[1.0, 2.0]])
+
+    modulated = TinyDiTBlock._modulate(normalized_tokens, shift, scale)
+
+    expected = torch.tensor([[[12.0, 26.0], [16.0, 32.0]]])
+    assert torch.equal(modulated, expected)
+
+
 def test_adaptive_block_preserves_shape_and_uses_conditioning() -> None:
     torch.manual_seed(11)
     block = TinyDiTBlock(embedding_dim=16, num_heads=4)

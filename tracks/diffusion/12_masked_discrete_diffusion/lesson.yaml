@@ -1,0 +1,8 @@
+id: diffusion.12_masked_discrete_diffusion
+title: Absorbing-Mask Corruption for Tokens
+track: diffusion
+level: intermediate
+summary: Build a discrete forward process that progressively replaces eligible text tokens with an absorbing mask token.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py

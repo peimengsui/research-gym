@@ -13,6 +13,12 @@ patches.permute(0, 2, 4, 1, 3, 5)
 Adaptive parameters are batch vectors. Add a token dimension with
 `[:, None, :]` before applying them to `[batch, patches, embedding_dim]`.
 
+The `_modulate` helper should implement:
+
+```python
+normalized_tokens * (1.0 + scale[:, None, :]) + shift[:, None, :]
+```
+
 ## Hint 3
 
 `conditioning_projection(conditioning).chunk(6, dim=-1)` returns the six
