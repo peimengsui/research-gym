@@ -1,0 +1,8 @@
+id: diffusion.13_tiny_diffusion_language_model
+title: Tiny Diffusion Language Model
+track: diffusion
+level: intermediate
+summary: Build a bidirectional token denoiser and generate text by confidence-based iterative unmasking.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py
