@@ -1,0 +1,8 @@
+id: diffusion.14_spatiotemporal_denoiser
+title: Spatiotemporal Video Denoiser
+track: diffusion
+level: intermediate
+summary: Extend image denoising to video by alternating per-frame spatial processing with temporal mixing.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py

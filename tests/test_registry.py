@@ -25,6 +25,7 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
         "diffusion.11_tiny_diffusion_transformer",
         "diffusion.12_masked_discrete_diffusion",
         "diffusion.13_tiny_diffusion_language_model",
+        "diffusion.14_spatiotemporal_denoiser",
         "llm.01_bigram_lm",
         "llm.02_tokenizer",
         "llm.03_causal_attention",
@@ -73,66 +74,69 @@ def test_discover_lessons_returns_sorted_mvp_lessons() -> None:
         "wm.13_stochastic_world_action_model",
         "wm.14_uncertainty_aware_planning",
     ]
-    assert lessons[0].title == "Noise Schedules and the Forward Process"
-    assert lessons[1].title == "Epsilon Prediction Objective"
-    assert lessons[2].title == "Reverse DDPM Sampling"
-    assert lessons[3].title == "Tiny U-Net Denoiser"
-    assert lessons[4].title == "Deterministic DDIM Sampling"
-    assert lessons[5].title == "Classifier-Free Guidance"
-    assert lessons[6].title == "Latent Diffusion"
-    assert lessons[7].title == "Cross-Attention Conditioning"
-    assert lessons[8].title == "Flow Matching and ODE Sampling"
-    assert lessons[9].title == "Epsilon, Clean-Sample, and Velocity Prediction"
-    assert lessons[10].title == "Tiny Diffusion Transformer"
-    assert lessons[11].title == "Absorbing-Mask Corruption for Tokens"
-    assert lessons[12].title == "Tiny Diffusion Language Model"
-    assert lessons[13].title == "Bigram Language Model"
-    assert lessons[14].title == "Tokenizer Fundamentals"
-    assert lessons[15].title == "Causal Self-Attention"
-    assert lessons[16].title == "Transformer Block"
-    assert lessons[17].title == "Tiny GPT"
-    assert lessons[18].title == "KV Cache"
-    assert lessons[19].title == "Direct Preference Optimization"
-    assert lessons[20].title == "Supervised Fine-Tuning Data"
-    assert lessons[21].title == "Low-Rank Adaptation"
-    assert lessons[22].title == "Language Model Sampling"
-    assert lessons[23].title == "Images as Patch Tokens"
-    assert lessons[24].title == "Visual Transformer Blocks"
-    assert lessons[25].title == "Unified Image and Text Tokens"
-    assert lessons[26].title == "Visual Prefix and Causal Text"
-    assert lessons[27].title == "Tiny Native Vision-Language Model"
-    assert lessons[28].title == "Image-Text Conversations"
-    assert lessons[29].title == "Image Prefill, KV Cache, and Decoding"
-    assert lessons[30].title == "Tiny Vision-Language Evaluation Harness"
-    assert lessons[31].title == "Weight Quantization"
-    assert lessons[32].title == "Draft, Verify, and Correct"
-    assert lessons[33].title == "KV Blocks and Request Scheduling"
-    assert lessons[34].title == "Videos as Spatiotemporal Tokens"
-    assert lessons[35].title == "Spatial and Temporal Attention"
-    assert lessons[36].title == "Video-Text Generation and Evaluation"
-    assert lessons[37].title == "Waveforms, STFT, and Audio Patches"
-    assert lessons[38].title == "Variable-Duration Audio and Attention"
-    assert lessons[39].title == "Audio-Text Generation and Evaluation"
-    assert lessons[40].title == "Rotary Position Embeddings and Cache Offsets"
-    assert lessons[41].title == "Shared Key-Value Heads and Smaller Caches"
-    assert lessons[42].title == "Gated Linear Attention and Selective Memory"
-    assert lessons[43].title == "Token Rewards and Advantage Estimation"
-    assert lessons[44].title == "Clipped Policy and Value Updates"
-    assert lessons[45].title == "Group-Relative Policy Optimization"
-    assert lessons[46].title == "Variational Autoencoder"
-    assert lessons[47].title == "Latent Dynamics"
-    assert lessons[48].title == "MDN-RNN"
-    assert lessons[49].title == "World Model Loop"
-    assert lessons[50].title == "CEM Planning"
-    assert lessons[51].title == "Predict Targets in Representation Space"
-    assert lessons[52].title == "Actions and Predictive Representations"
-    assert lessons[53].title == "Latent Imagination and Lambda Returns"
-    assert lessons[54].title == "Actor and Value Learning in Dreams"
-    assert lessons[55].title == "Vision, Language, and Action Chunks"
-    assert lessons[56].title == "Predict Futures and Actions Together"
-    assert lessons[57].title == "Receding-Horizon Planning with a WAM"
-    assert lessons[58].title == "Multiple Futures and Action Strategies"
-    assert lessons[59].title == "Model Disagreement and Safer Plans"
+    assert [lesson.title for lesson in lessons] == [
+        "Noise Schedules and the Forward Process",
+        "Epsilon Prediction Objective",
+        "Reverse DDPM Sampling",
+        "Tiny U-Net Denoiser",
+        "Deterministic DDIM Sampling",
+        "Classifier-Free Guidance",
+        "Latent Diffusion",
+        "Cross-Attention Conditioning",
+        "Flow Matching and ODE Sampling",
+        "Epsilon, Clean-Sample, and Velocity Prediction",
+        "Tiny Diffusion Transformer",
+        "Absorbing-Mask Corruption for Tokens",
+        "Tiny Diffusion Language Model",
+        "Spatiotemporal Video Denoiser",
+        "Bigram Language Model",
+        "Tokenizer Fundamentals",
+        "Causal Self-Attention",
+        "Transformer Block",
+        "Tiny GPT",
+        "KV Cache",
+        "Direct Preference Optimization",
+        "Supervised Fine-Tuning Data",
+        "Low-Rank Adaptation",
+        "Language Model Sampling",
+        "Images as Patch Tokens",
+        "Visual Transformer Blocks",
+        "Unified Image and Text Tokens",
+        "Visual Prefix and Causal Text",
+        "Tiny Native Vision-Language Model",
+        "Image-Text Conversations",
+        "Image Prefill, KV Cache, and Decoding",
+        "Tiny Vision-Language Evaluation Harness",
+        "Weight Quantization",
+        "Draft, Verify, and Correct",
+        "KV Blocks and Request Scheduling",
+        "Videos as Spatiotemporal Tokens",
+        "Spatial and Temporal Attention",
+        "Video-Text Generation and Evaluation",
+        "Waveforms, STFT, and Audio Patches",
+        "Variable-Duration Audio and Attention",
+        "Audio-Text Generation and Evaluation",
+        "Rotary Position Embeddings and Cache Offsets",
+        "Shared Key-Value Heads and Smaller Caches",
+        "Gated Linear Attention and Selective Memory",
+        "Token Rewards and Advantage Estimation",
+        "Clipped Policy and Value Updates",
+        "Group-Relative Policy Optimization",
+        "Variational Autoencoder",
+        "Latent Dynamics",
+        "MDN-RNN",
+        "World Model Loop",
+        "CEM Planning",
+        "Predict Targets in Representation Space",
+        "Actions and Predictive Representations",
+        "Latent Imagination and Lambda Returns",
+        "Actor and Value Learning in Dreams",
+        "Vision, Language, and Action Chunks",
+        "Predict Futures and Actions Together",
+        "Receding-Horizon Planning with a WAM",
+        "Multiple Futures and Action Strategies",
+        "Model Disagreement and Safer Plans",
+    ]
 
 
 def test_get_lesson_returns_requested_lesson() -> None:

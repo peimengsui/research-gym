@@ -299,6 +299,21 @@ research-gym/
         scripts/
           run_demo.py
 
+      14_spatiotemporal_denoiser/
+        lesson.yaml
+        README.md
+        concept.md
+        guide.md
+        scaffold.py
+        solution.py
+        provided.py
+        hints.md
+        review.md
+        tests/
+          test_spatiotemporal_denoiser.py
+        scripts/
+          run_demo.py
+
     llm/
       01_bigram_lm/
         lesson.yaml

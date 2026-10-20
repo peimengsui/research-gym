@@ -29,6 +29,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
         "diffusion.11_tiny_diffusion_transformer",
         "diffusion.12_masked_discrete_diffusion",
         "diffusion.13_tiny_diffusion_language_model",
+        "diffusion.14_spatiotemporal_denoiser",
         "llm.01_bigram_lm",
         "llm.02_tokenizer",
         "llm.03_causal_attention",
