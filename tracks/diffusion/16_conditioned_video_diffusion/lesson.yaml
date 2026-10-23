@@ -1,0 +1,8 @@
+id: diffusion.16_conditioned_video_diffusion
+title: First-Frame and Text-Guided Video Diffusion
+track: diffusion
+level: intermediate
+summary: Preserve a supplied first frame while classifier-free guidance steers a tiny video toward a text motion instruction.
+entrypoint: implementation.py
+test_command: uv run pytest tests
+run_command: uv run python scripts/run_demo.py

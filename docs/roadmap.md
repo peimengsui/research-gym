@@ -61,6 +61,7 @@ and code-level fluency. Ordering is directional rather than a release promise.
 - complete Tiny Diffusion Language Model lesson
 - complete Spatiotemporal Video Denoiser lesson
 - complete Tiny Video Diffusion lesson
+- complete First-Frame and Text-Guided Video Diffusion lesson
 
 ## Track roadmaps
 
@@ -216,12 +217,9 @@ Completed:
 - `diffusion.13_tiny_diffusion_language_model` — Generate Text by Iterative Unmasking
 - `diffusion.14_spatiotemporal_denoiser` — Couple Spatial and Temporal Denoising
 - `diffusion.15_tiny_video_diffusion` — Generate Tiny Moving-Dot Videos
+- `diffusion.16_conditioned_video_diffusion` — First-Frame and Text-Guided Video
 
 Remaining plan:
-
-Stage 3 — video diffusion:
-
-- `diffusion.16_conditioned_video_diffusion` — First-Frame and Text-Guided Video
 
 Stage 4 — fast generation:
 
@@ -295,8 +293,8 @@ downloaded video datasets, and long training runs remain out of scope.
 - compare inference and modality behavior through richer reports
 - connect future prediction and action generation with `wm.11` through `wm.13`
 - add uncertainty-aware WAM planning with `wm.14`
-- build on the completed video denoiser and sampler in `diffusion.14` and
-  `diffusion.15` with conditioning in `diffusion.16`
+- consolidate the completed video denoising, sampling, and conditioning
+  progression from `diffusion.14` through `diffusion.16`
 - revisit fast sampling with consistency models in `diffusion.17`
 - lesson authoring validation and contribution templates
 - richer reports that summarize tests, demos, and learner reflection
